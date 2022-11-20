@@ -14,7 +14,7 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
-        PersistenceController().getAllInfo()
+        PersistenceController().smoke()
     }
 
 

@@ -16,10 +16,10 @@
 		7976BE66291EBF3900F0EB20 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976BE65291EBF3900F0EB20 /* HomePresenter.swift */; };
 		7976BE6B291EDDF900F0EB20 /* StopSmokeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7976BE69291EDDF900F0EB20 /* StopSmokeModel.xcdatamodeld */; };
 		798993C329250854006EE79A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993C229250854006EE79A /* CoreDataManager.swift */; };
-		79AB1215292290B3008C5A2B /* DayInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AB1211292290B3008C5A2B /* DayInfo+CoreDataClass.swift */; };
-		79AB1216292290B3008C5A2B /* DayInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AB1212292290B3008C5A2B /* DayInfo+CoreDataProperties.swift */; };
-		79AB1217292290B3008C5A2B /* Day+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AB1213292290B3008C5A2B /* Day+CoreDataClass.swift */; };
-		79AB1218292290B3008C5A2B /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79AB1214292290B3008C5A2B /* Day+CoreDataProperties.swift */; };
+		798993C9292ADAF8006EE79A /* DayInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993C5292ADAF8006EE79A /* DayInfo+CoreDataClass.swift */; };
+		798993CA292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993C6292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift */; };
+		798993CB292ADAF8006EE79A /* Day+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993C7292ADAF8006EE79A /* Day+CoreDataClass.swift */; };
+		798993CC292ADAF8006EE79A /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993C8292ADAF8006EE79A /* Day+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,10 +34,10 @@
 		7976BE65291EBF3900F0EB20 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		7976BE6A291EDDF900F0EB20 /* StopSmokeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StopSmokeModel.xcdatamodel; sourceTree = "<group>"; };
 		798993C229250854006EE79A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		79AB1211292290B3008C5A2B /* DayInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayInfo+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		79AB1212292290B3008C5A2B /* DayInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayInfo+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		79AB1213292290B3008C5A2B /* Day+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		79AB1214292290B3008C5A2B /* Day+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		798993C5292ADAF8006EE79A /* DayInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		798993C6292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		798993C7292ADAF8006EE79A /* Day+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataClass.swift"; sourceTree = "<group>"; };
+		798993C8292ADAF8006EE79A /* Day+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +120,10 @@
 		79AB1210292290A2008C5A2B /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
-				79AB1211292290B3008C5A2B /* DayInfo+CoreDataClass.swift */,
-				79AB1212292290B3008C5A2B /* DayInfo+CoreDataProperties.swift */,
-				79AB1213292290B3008C5A2B /* Day+CoreDataClass.swift */,
-				79AB1214292290B3008C5A2B /* Day+CoreDataProperties.swift */,
+				798993C5292ADAF8006EE79A /* DayInfo+CoreDataClass.swift */,
+				798993C6292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift */,
+				798993C7292ADAF8006EE79A /* Day+CoreDataClass.swift */,
+				798993C8292ADAF8006EE79A /* Day+CoreDataProperties.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -198,16 +198,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79AB1216292290B3008C5A2B /* DayInfo+CoreDataProperties.swift in Sources */,
 				7976BE52291EA40400F0EB20 /* HomeVC.swift in Sources */,
 				7976BE4E291EA40400F0EB20 /* AppDelegate.swift in Sources */,
 				7976BE50291EA40400F0EB20 /* SceneDelegate.swift in Sources */,
-				79AB1215292290B3008C5A2B /* DayInfo+CoreDataClass.swift in Sources */,
+				798993C9292ADAF8006EE79A /* DayInfo+CoreDataClass.swift in Sources */,
 				7976BE6B291EDDF900F0EB20 /* StopSmokeModel.xcdatamodeld in Sources */,
-				79AB1217292290B3008C5A2B /* Day+CoreDataClass.swift in Sources */,
+				798993CA292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift in Sources */,
+				798993CC292ADAF8006EE79A /* Day+CoreDataProperties.swift in Sources */,
 				7976BE66291EBF3900F0EB20 /* HomePresenter.swift in Sources */,
-				79AB1218292290B3008C5A2B /* Day+CoreDataProperties.swift in Sources */,
 				7976BE63291EB5B200F0EB20 /* Builder.swift in Sources */,
+				798993CB292ADAF8006EE79A /* Day+CoreDataClass.swift in Sources */,
 				798993C329250854006EE79A /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
