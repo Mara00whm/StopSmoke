@@ -2,7 +2,7 @@
 //  DayInfo+CoreDataProperties.swift
 //  StopSmoke
 //
-//  Created by Marat on 14.11.2022.
+//  Created by Marat on 21.11.2022.
 //
 //
 
@@ -18,10 +18,6 @@ extension DayInfo {
 
     @NSManaged public var smokeDate: Date?
     @NSManaged public var day: Day?
-    
-    public var unwrappedName: String {
-        DateFormatter().string(from: smokeDate ?? Date() ) ?? "Unknown name"
-    }
 
 }
 

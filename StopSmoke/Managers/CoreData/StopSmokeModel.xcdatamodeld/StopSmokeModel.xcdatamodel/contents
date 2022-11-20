@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Day" representedClassName="Day" syncable="YES">
         <attribute name="day" optional="YES" attributeType="String"/>
+        <attribute name="totalCigarettes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="dayInfo" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="DayInfo" inverseName="day" inverseEntity="DayInfo"/>
     </entity>
     <entity name="DayInfo" representedClassName="DayInfo" syncable="YES">
@@ -9,7 +10,7 @@
         <relationship name="day" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Day" inverseName="dayInfo" inverseEntity="Day"/>
     </entity>
     <elements>
-        <element name="Day" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="Day" positionX="-63" positionY="-18" width="128" height="74"/>
         <element name="DayInfo" positionX="-54" positionY="-9" width="128" height="59"/>
     </elements>
 </model>

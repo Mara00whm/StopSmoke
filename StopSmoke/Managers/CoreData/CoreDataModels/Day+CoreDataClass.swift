@@ -2,7 +2,7 @@
 //  Day+CoreDataClass.swift
 //  StopSmoke
 //
-//  Created by Marat on 14.11.2022.
+//  Created by Marat on 21.11.2022.
 //
 //
 
