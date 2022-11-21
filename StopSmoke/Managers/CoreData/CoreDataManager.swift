@@ -8,11 +8,12 @@
 import Foundation
 import CoreData
 
-protocol PersistenceControllerProtocol {
+protocol CoreDataManagerProtocol {
     func smoke()
+    func countCigarettesBefore(started: Date, totalCigarettes: Int)
 }
 
-class PersistenceController: PersistenceControllerProtocol {
+class CoreDataManager: CoreDataManagerProtocol {
 
     let container: NSPersistentContainer
 
@@ -64,7 +65,6 @@ class PersistenceController: PersistenceControllerProtocol {
         let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
         do {
             let obj = try viewContext.fetch(fetchRequest)
-            
             if let currentDay = obj.last?.day,
             currentDay == convertDateToString(Date() ) {
                 createNewSmokeSession()
@@ -77,6 +77,17 @@ class PersistenceController: PersistenceControllerProtocol {
         }
     }
     
+    func countCigarettesBefore(started: Date, totalCigarettes: Int) {
+        let periodLabel = convertDateToString(started) + " - " + convertDateToString(Date())
+        
+        let period = Day(context: viewContext)
+        period.day = periodLabel
+        period.totalCigarettes = Int64(totalCigarettes)
+        print(period)
+        saveContext()
+        
+    }
+
     private func createNewDay() {
         let day = Day(context: viewContext)
          let currentDay = convertDateToString(Date() )

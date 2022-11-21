@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79524D8B292C013000C943CB /* AcceptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D8A292C013000C943CB /* AcceptButton.swift */; };
+		79524D8D292C03BF00C943CB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D8C292C03BF00C943CB /* ColorExtension.swift */; };
+		79524D92292C0BA300C943CB /* RestoreDataViewLocalized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79524D94292C0BA300C943CB /* RestoreDataViewLocalized.strings */; };
+		79524D97292C0CD000C943CB /* LocalizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D96292C0CD000C943CB /* LocalizeExtension.swift */; };
 		7976BE4E291EA40400F0EB20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976BE4D291EA40400F0EB20 /* AppDelegate.swift */; };
 		7976BE50291EA40400F0EB20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976BE4F291EA40400F0EB20 /* SceneDelegate.swift */; };
 		7976BE52291EA40400F0EB20 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976BE51291EA40400F0EB20 /* HomeVC.swift */; };
@@ -20,9 +24,18 @@
 		798993CA292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993C6292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift */; };
 		798993CB292ADAF8006EE79A /* Day+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993C7292ADAF8006EE79A /* Day+CoreDataClass.swift */; };
 		798993CC292ADAF8006EE79A /* Day+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993C8292ADAF8006EE79A /* Day+CoreDataProperties.swift */; };
+		798993CF292ADCB6006EE79A /* RestoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993CE292ADCB6006EE79A /* RestoreDataView.swift */; };
+		798993D1292ADCC0006EE79A /* RestoreDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993D0292ADCC0006EE79A /* RestoreDataPresenter.swift */; };
+		798993D4292AE4E4006EE79A /* CalendatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993D3292AE4E4006EE79A /* CalendatExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79524D8A292C013000C943CB /* AcceptButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptButton.swift; sourceTree = "<group>"; };
+		79524D8C292C03BF00C943CB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		79524D8E292C0B8300C943CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		79524D93292C0BA300C943CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RestoreDataViewLocalized.strings; sourceTree = "<group>"; };
+		79524D95292C0BA400C943CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RestoreDataViewLocalized.strings; sourceTree = "<group>"; };
+		79524D96292C0CD000C943CB /* LocalizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeExtension.swift; sourceTree = "<group>"; };
 		7976BE4A291EA40400F0EB20 /* StopSmoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopSmoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7976BE4D291EA40400F0EB20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7976BE4F291EA40400F0EB20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +51,9 @@
 		798993C6292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DayInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		798993C7292ADAF8006EE79A /* Day+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataClass.swift"; sourceTree = "<group>"; };
 		798993C8292ADAF8006EE79A /* Day+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Day+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		798993CE292ADCB6006EE79A /* RestoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreDataView.swift; sourceTree = "<group>"; };
+		798993D0292ADCC0006EE79A /* RestoreDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreDataPresenter.swift; sourceTree = "<group>"; };
+		798993D3292AE4E4006EE79A /* CalendatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendatExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79524D87292C00D300C943CB /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				79524D8A292C013000C943CB /* AcceptButton.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		79524D8F292C0B8800C943CB /* Localized */ = {
+			isa = PBXGroup;
+			children = (
+				79524D94292C0BA300C943CB /* RestoreDataViewLocalized.strings */,
+			);
+			path = Localized;
+			sourceTree = "<group>";
+		};
 		7976BE41291EA40400F0EB20 = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +102,9 @@
 		7976BE4C291EA40400F0EB20 /* StopSmoke */ = {
 			isa = PBXGroup;
 			children = (
+				79524D87292C00D300C943CB /* ReusableViews */,
+				798993D2292AE4D9006EE79A /* Extension */,
+				798993CD292ADC9C006EE79A /* ResotreDataView */,
 				7976BE67291ED7EB00F0EB20 /* Managers */,
 				7976BE64291EBF1F00F0EB20 /* HomeView */,
 				7976BE61291EB5A100F0EB20 /* ProjectFiles */,
@@ -115,6 +150,26 @@
 				798993C229250854006EE79A /* CoreDataManager.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		798993CD292ADC9C006EE79A /* ResotreDataView */ = {
+			isa = PBXGroup;
+			children = (
+				79524D8F292C0B8800C943CB /* Localized */,
+				798993CE292ADCB6006EE79A /* RestoreDataView.swift */,
+				798993D0292ADCC0006EE79A /* RestoreDataPresenter.swift */,
+			);
+			path = ResotreDataView;
+			sourceTree = "<group>";
+		};
+		798993D2292AE4D9006EE79A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				798993D3292AE4E4006EE79A /* CalendatExtension.swift */,
+				79524D8C292C03BF00C943CB /* ColorExtension.swift */,
+				79524D96292C0CD000C943CB /* LocalizeExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		79AB1210292290A2008C5A2B /* CoreDataModels */ = {
@@ -170,6 +225,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 7976BE41291EA40400F0EB20;
 			productRefGroup = 7976BE4B291EA40400F0EB20 /* Products */;
@@ -186,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79524D92292C0BA300C943CB /* RestoreDataViewLocalized.strings in Resources */,
 				7976BE5A291EA40800F0EB20 /* LaunchScreen.storyboard in Resources */,
 				7976BE57291EA40800F0EB20 /* Assets.xcassets in Resources */,
 			);
@@ -204,9 +261,15 @@
 				798993C9292ADAF8006EE79A /* DayInfo+CoreDataClass.swift in Sources */,
 				7976BE6B291EDDF900F0EB20 /* StopSmokeModel.xcdatamodeld in Sources */,
 				798993CA292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift in Sources */,
+				798993D1292ADCC0006EE79A /* RestoreDataPresenter.swift in Sources */,
+				79524D8B292C013000C943CB /* AcceptButton.swift in Sources */,
+				798993D4292AE4E4006EE79A /* CalendatExtension.swift in Sources */,
 				798993CC292ADAF8006EE79A /* Day+CoreDataProperties.swift in Sources */,
 				7976BE66291EBF3900F0EB20 /* HomePresenter.swift in Sources */,
+				79524D8D292C03BF00C943CB /* ColorExtension.swift in Sources */,
+				79524D97292C0CD000C943CB /* LocalizeExtension.swift in Sources */,
 				7976BE63291EB5B200F0EB20 /* Builder.swift in Sources */,
+				798993CF292ADCB6006EE79A /* RestoreDataView.swift in Sources */,
 				798993CB292ADAF8006EE79A /* Day+CoreDataClass.swift in Sources */,
 				798993C329250854006EE79A /* CoreDataManager.swift in Sources */,
 			);
@@ -215,10 +278,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		79524D94292C0BA300C943CB /* RestoreDataViewLocalized.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79524D93292C0BA300C943CB /* en */,
+				79524D95292C0BA400C943CB /* ru */,
+			);
+			name = RestoreDataViewLocalized.strings;
+			sourceTree = "<group>";
+		};
 		7976BE58291EA40800F0EB20 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7976BE59291EA40800F0EB20 /* Base */,
+				79524D8E292C0B8300C943CB /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -230,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -290,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

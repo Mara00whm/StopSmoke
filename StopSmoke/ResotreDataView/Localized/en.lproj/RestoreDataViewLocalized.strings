@@ -1,0 +1,12 @@
+/* 
+  RestoreDataViewLocalized.strings
+  StopSmoke
+
+  Created by Marat on 21.11.2022.
+  
+*/
+
+"doneButton" = "Done";
+"neverSmokedButton" = "I've never smoked before";
+"chooseDayLabel" = "Chose day, when you started to smoke: ";
+"averageCigarettes" = "Average cigarettes per day: ";
