@@ -14,9 +14,10 @@ protocol HomeViewProtocol: AnyObject {
 }
 
 protocol HomeViewPresenterProtocol {
-    init(view: HomeViewProtocol, coredataManager: CoreDataManagerProtocol)
-    func getTimeFromLastCigaret()
+    init(view: HomeViewProtocol, coredataManager: CoreDataManagerProtocol, router: RouterProtocol)
     var allTimeTableInfo: [Day] {get}
+    func getTimeFromLastCigaret()
+    func goToSmokeVC()
 }
 
 
@@ -27,19 +28,26 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
             view?.reloadTable()
         }
     }
+    
+    var router: RouterProtocol?
     weak var view: HomeViewProtocol?
     let coredataManager: CoreDataManagerProtocol
     
-    required init(view: HomeViewProtocol, coredataManager: CoreDataManagerProtocol) {
+    required init(view: HomeViewProtocol,
+                  coredataManager: CoreDataManagerProtocol,
+                  router: RouterProtocol) {
         self.view = view
         self.coredataManager = coredataManager
-        
+        self.router = router
+
         self.getTimeFromLastCigaret()
         self.getTotalTodayCigaretts()
         self.getInfoForAllTime()
     }
     
-    
+    func goToSmokeVC() {
+        router?.restoreVC()
+    }
     // MARK: - refactor later
     func getTimeFromLastCigaret() {
         if let date = coredataManager.getDateOfLastCigaret() {
