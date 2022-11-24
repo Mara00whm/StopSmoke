@@ -54,6 +54,7 @@ class HomeVC: UIViewController {
        let view = DefaultAppButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Want to smoke")
+        view.addTarget(self, action: #selector(openSmokeVC), for: .touchUpInside)
         return view
     }()
     //MARK: - OVERRIDE FUNCS
@@ -66,6 +67,8 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appBackgroundColor
+        navigationItem.title = "s"
+        navigationController?.navigationItem.title = "sd"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -121,11 +124,15 @@ class HomeVC: UIViewController {
         allTimeInfoTable.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
     }
-
+    //MARK: - objc funcs
     @objc private func getTimeFromLastCigaret() {
         let time = counter.timeString()
         counter += 1
         timeFromLastCigaretteView.setValues("\(time)")
+    }
+    
+    @objc private func openSmokeVC() {
+        presenter.goToSmokeVC()
     }
     //MARK: - Enum constants
 
