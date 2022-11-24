@@ -8,21 +8,52 @@
 import Foundation
 
 protocol HomeViewProtocol: AnyObject {
-    
+    func setTimeFromLastCigaret(time: TimeInterval)
+    func setTotalCigaretts(total: Int64)
+    func reloadTable()
 }
 
 protocol HomeViewPresenterProtocol {
-    init(view: HomeViewProtocol)
+    init(view: HomeViewProtocol, coredataManager: CoreDataManagerProtocol)
+    func getTimeFromLastCigaret()
+    var allTimeTableInfo: [Day] {get}
 }
 
 
 class HomeViewPresenter: HomeViewPresenterProtocol {
 
+    var allTimeTableInfo: [Day] = [] {
+        didSet {
+            view?.reloadTable()
+        }
+    }
     weak var view: HomeViewProtocol?
-
-    required init(view: HomeViewProtocol) {
+    let coredataManager: CoreDataManagerProtocol
+    
+    required init(view: HomeViewProtocol, coredataManager: CoreDataManagerProtocol) {
         self.view = view
+        self.coredataManager = coredataManager
+        
+        self.getTimeFromLastCigaret()
+        self.getTotalTodayCigaretts()
+        self.getInfoForAllTime()
     }
     
+    
+    // MARK: - refactor later
+    func getTimeFromLastCigaret() {
+        if let date = coredataManager.getDateOfLastCigaret() {
+            view?.setTimeFromLastCigaret(time: Date() - date)
+        }
+    }
+    
+    func getTotalTodayCigaretts() {
+        let counter = coredataManager.getCountCigarettToday()
+        view?.setTotalCigaretts(total: counter ?? 0)
+    }
+    
+    func getInfoForAllTime() {
+        allTimeTableInfo = coredataManager.getInfoForAllTime() ?? []
+    }
     
 }

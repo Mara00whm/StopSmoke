@@ -1,5 +1,5 @@
 //
-//  AcceptButton.swift
+//  DefaultAppButton.swift
 //  StopSmoke
 //
 //  Created by Marat on 21.11.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AcceptButton: UIButton {
+class DefaultAppButton: UIButton {
     
     //MARK: - OVERRIDE FUNCS
     override init(frame: CGRect) {
@@ -23,10 +23,10 @@ class AcceptButton: UIButton {
     
     private func setting() {
         backgroundColor = .acceptButton
-        setTitleColor(.backgroundColor , for: .normal)
+        setTitleColor(.appBackgroundColor , for: .normal)
         layer.cornerRadius = 15
         layer.masksToBounds = true
-        layer.borderColor = UIColor.textColor.cgColor
+        layer.borderColor = UIColor.viewBackgroundColor.cgColor
         layer.borderWidth = 1
     }
     

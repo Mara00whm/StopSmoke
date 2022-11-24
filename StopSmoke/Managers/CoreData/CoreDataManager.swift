@@ -11,6 +11,9 @@ import CoreData
 protocol CoreDataManagerProtocol {
     func smoke()
     func countCigarettesBefore(started: Date, totalCigarettes: Int)
+    func getDateOfLastCigaret() -> Date?
+    func getCountCigarettToday() -> Int64?
+    func getInfoForAllTime() -> [Day]?
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
@@ -87,7 +90,51 @@ class CoreDataManager: CoreDataManagerProtocol {
         saveContext()
         
     }
+    
+    func getDateOfLastCigaret() -> Date? {
+        let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
 
+        do {
+            let obj = try viewContext.fetch(fetchRequest)
+            print("Fetching")
+            return obj.last?.dayInfoUnwrappedArray.last?.smokeDate
+
+        } catch {
+            return nil
+        }
+
+    }
+    
+    func getCountCigarettToday() -> Int64? {
+        let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
+        print("here")
+        do {
+            let obj = try viewContext.fetch(fetchRequest)
+            print(obj.last?.totalCigarettes)
+            return obj.last?.totalCigarettes
+            
+        } catch {
+            print("here")
+            return nil
+        }
+    }
+
+    func getInfoForAllTime() -> [Day]? {
+        let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
+        let df = DateFormatter()
+        df.dateFormat = "MMM d, YY"
+        df.locale = Locale(identifier: "en_US_POSIX")
+        df.timeZone = TimeZone(identifier: "UTC")!
+        do {
+            let obj = try viewContext.fetch(fetchRequest)
+            return obj.sorted {
+                df.date(from: $0.day!) ?? Date() > df.date(from: $1.day!) ?? Date()
+            }.reversed()
+        } catch {
+            return nil
+        }
+    }
+    
     private func createNewDay() {
         let day = Day(context: viewContext)
          let currentDay = convertDateToString(Date() )

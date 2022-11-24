@@ -18,6 +18,10 @@ extension DayInfo {
 
     @NSManaged public var smokeDate: Date?
     @NSManaged public var day: Day?
+    
+    var unwrappedDate: Date {
+        smokeDate ?? Date()
+    }
 
 }
 

@@ -19,6 +19,14 @@ extension Day {
     @NSManaged public var day: String?
     @NSManaged public var totalCigarettes: Int64
     @NSManaged public var dayInfo: NSSet?
+    
+    var dayInfoUnwrappedArray: [DayInfo] {
+        let dayInfoSet = dayInfo as? Set<DayInfo> ?? []
+        
+        return dayInfoSet.sorted {
+            $0.unwrappedDate < $1.unwrappedDate
+        }
+    }
 
 }
 
