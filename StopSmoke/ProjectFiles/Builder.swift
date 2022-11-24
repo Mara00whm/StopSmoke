@@ -18,7 +18,7 @@ class ModuleBuilder: Builder {
     
     static func createModule() -> UIViewController {
         let view = HomeVC()
-        let presenter = HomeViewPresenter(view: view)
+        let presenter = HomeViewPresenter(view: view, coredataManager: coredataManager)
         view.presenter = presenter
         return view
     }

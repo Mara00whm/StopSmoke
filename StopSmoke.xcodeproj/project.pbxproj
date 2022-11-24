@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79524D8B292C013000C943CB /* AcceptButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D8A292C013000C943CB /* AcceptButton.swift */; };
+		79524D8B292C013000C943CB /* DefaultAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D8A292C013000C943CB /* DefaultAppButton.swift */; };
 		79524D8D292C03BF00C943CB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D8C292C03BF00C943CB /* ColorExtension.swift */; };
 		79524D92292C0BA300C943CB /* RestoreDataViewLocalized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79524D94292C0BA300C943CB /* RestoreDataViewLocalized.strings */; };
 		79524D97292C0CD000C943CB /* LocalizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D96292C0CD000C943CB /* LocalizeExtension.swift */; };
+		79524D9F292D841100C943CB /* InfoUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D9E292D841100C943CB /* InfoUIView.swift */; };
+		79524DA1292EBCF600C943CB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524DA0292EBCF600C943CB /* DateExtension.swift */; };
+		79524DA3292F93E200C943CB /* AllTimeStatisticTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524DA2292F93E200C943CB /* AllTimeStatisticTVC.swift */; };
 		7976BE4E291EA40400F0EB20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976BE4D291EA40400F0EB20 /* AppDelegate.swift */; };
 		7976BE50291EA40400F0EB20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976BE4F291EA40400F0EB20 /* SceneDelegate.swift */; };
 		7976BE52291EA40400F0EB20 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976BE51291EA40400F0EB20 /* HomeVC.swift */; };
@@ -30,12 +33,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		79524D8A292C013000C943CB /* AcceptButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptButton.swift; sourceTree = "<group>"; };
+		79524D8A292C013000C943CB /* DefaultAppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAppButton.swift; sourceTree = "<group>"; };
 		79524D8C292C03BF00C943CB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		79524D8E292C0B8300C943CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		79524D93292C0BA300C943CB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RestoreDataViewLocalized.strings; sourceTree = "<group>"; };
 		79524D95292C0BA400C943CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RestoreDataViewLocalized.strings; sourceTree = "<group>"; };
 		79524D96292C0CD000C943CB /* LocalizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeExtension.swift; sourceTree = "<group>"; };
+		79524D9E292D841100C943CB /* InfoUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoUIView.swift; sourceTree = "<group>"; };
+		79524DA0292EBCF600C943CB /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		79524DA2292F93E200C943CB /* AllTimeStatisticTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTimeStatisticTVC.swift; sourceTree = "<group>"; };
 		7976BE4A291EA40400F0EB20 /* StopSmoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopSmoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7976BE4D291EA40400F0EB20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7976BE4F291EA40400F0EB20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +76,8 @@
 		79524D87292C00D300C943CB /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
-				79524D8A292C013000C943CB /* AcceptButton.swift */,
+				79524D9E292D841100C943CB /* InfoUIView.swift */,
+				79524D8A292C013000C943CB /* DefaultAppButton.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -81,6 +88,14 @@
 				79524D94292C0BA300C943CB /* RestoreDataViewLocalized.strings */,
 			);
 			path = Localized;
+			sourceTree = "<group>";
+		};
+		79524D98292D28A100C943CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79524DA2292F93E200C943CB /* AllTimeStatisticTVC.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		7976BE41291EA40400F0EB20 = {
@@ -128,6 +143,7 @@
 		7976BE64291EBF1F00F0EB20 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
+				79524D98292D28A100C943CB /* View */,
 				7976BE51291EA40400F0EB20 /* HomeVC.swift */,
 				7976BE65291EBF3900F0EB20 /* HomePresenter.swift */,
 			);
@@ -168,6 +184,7 @@
 				798993D3292AE4E4006EE79A /* CalendatExtension.swift */,
 				79524D8C292C03BF00C943CB /* ColorExtension.swift */,
 				79524D96292C0CD000C943CB /* LocalizeExtension.swift */,
+				79524DA0292EBCF600C943CB /* DateExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -256,13 +273,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				7976BE52291EA40400F0EB20 /* HomeVC.swift in Sources */,
+				79524DA3292F93E200C943CB /* AllTimeStatisticTVC.swift in Sources */,
+				79524DA1292EBCF600C943CB /* DateExtension.swift in Sources */,
 				7976BE4E291EA40400F0EB20 /* AppDelegate.swift in Sources */,
 				7976BE50291EA40400F0EB20 /* SceneDelegate.swift in Sources */,
+				79524D9F292D841100C943CB /* InfoUIView.swift in Sources */,
 				798993C9292ADAF8006EE79A /* DayInfo+CoreDataClass.swift in Sources */,
 				7976BE6B291EDDF900F0EB20 /* StopSmokeModel.xcdatamodeld in Sources */,
 				798993CA292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift in Sources */,
 				798993D1292ADCC0006EE79A /* RestoreDataPresenter.swift in Sources */,
-				79524D8B292C013000C943CB /* AcceptButton.swift in Sources */,
+				79524D8B292C013000C943CB /* DefaultAppButton.swift in Sources */,
 				798993D4292AE4E4006EE79A /* CalendatExtension.swift in Sources */,
 				798993CC292ADAF8006EE79A /* Day+CoreDataProperties.swift in Sources */,
 				7976BE66291EBF3900F0EB20 /* HomePresenter.swift in Sources */,

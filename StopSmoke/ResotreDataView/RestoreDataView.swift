@@ -26,7 +26,7 @@ class RestoreDataView: UIViewController {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = ViewTextConstants.chooseDayLabel.rawValue.localize(from: localizedName)
-        view.textColor = .textColor
+        view.textColor = .viewBackgroundColor
         return view
     }()
     
@@ -43,7 +43,7 @@ class RestoreDataView: UIViewController {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = ViewTextConstants.averageCigarettes.rawValue.localize(from: localizedName)
-        view.textColor = .textColor
+        view.textColor = .viewBackgroundColor
         return view
     }()
     
@@ -52,14 +52,14 @@ class RestoreDataView: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.keyboardType = .numberPad
         view.layer.cornerRadius = ViewSizeConstants.cornerRadius
-        view.backgroundColor = .textColor
+        view.backgroundColor = .viewBackgroundColor
         view.textAlignment = .center
-        view.textColor = .backgroundColor
+        view.textColor = .appBackgroundColor
         return view
     }()
     
-    private let acceptButton: AcceptButton = {
-        let view = AcceptButton()
+    private let acceptButton: DefaultAppButton = {
+        let view = DefaultAppButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle(ViewTextConstants.doneButton.rawValue.localize(from: localizedName))
         view.addTarget(self, action: #selector(countCigarettes), for: .touchUpInside)
@@ -115,7 +115,7 @@ class RestoreDataView: UIViewController {
     }
     
     private func settings() {
-        view.backgroundColor = .backgroundColor
+        view.backgroundColor = .appBackgroundColor
         
         view.addSubview(skipButton)
         view.addSubview(firstSmokeDate)
