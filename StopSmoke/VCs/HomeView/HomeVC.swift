@@ -67,8 +67,6 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .appBackgroundColor
-        navigationItem.title = "s"
-        navigationController?.navigationItem.title = "sd"
     }
     
     override func viewWillAppear(_ animated: Bool) {
