@@ -15,6 +15,11 @@
 		79524DA1292EBCF600C943CB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524DA0292EBCF600C943CB /* DateExtension.swift */; };
 		79524DA3292F93E200C943CB /* AllTimeStatisticTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524DA2292F93E200C943CB /* AllTimeStatisticTVC.swift */; };
 		79524DAB2930228200C943CB /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524DAA2930228200C943CB /* Router.swift */; };
+		79524DAF293118D800C943CB /* SmokeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524DAE293118D800C943CB /* SmokeViewPresenter.swift */; };
+		79524DB1293118E300C943CB /* SmokeViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524DB0293118E300C943CB /* SmokeViewVC.swift */; };
+		79524DB4293161E800C943CB /* SmokeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524DB3293161E800C943CB /* SmokeButton.swift */; };
+		79524DB629316F9900C943CB /* TodayInfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524DB529316F9900C943CB /* TodayInfoTVC.swift */; };
+		79524DB8293174FD00C943CB /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524DB7293174FD00C943CB /* IntExtension.swift */; };
 		7976BE4E291EA40400F0EB20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976BE4D291EA40400F0EB20 /* AppDelegate.swift */; };
 		7976BE50291EA40400F0EB20 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976BE4F291EA40400F0EB20 /* SceneDelegate.swift */; };
 		7976BE52291EA40400F0EB20 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7976BE51291EA40400F0EB20 /* HomeVC.swift */; };
@@ -44,6 +49,11 @@
 		79524DA0292EBCF600C943CB /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		79524DA2292F93E200C943CB /* AllTimeStatisticTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTimeStatisticTVC.swift; sourceTree = "<group>"; };
 		79524DAA2930228200C943CB /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		79524DAE293118D800C943CB /* SmokeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeViewPresenter.swift; sourceTree = "<group>"; };
+		79524DB0293118E300C943CB /* SmokeViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeViewVC.swift; sourceTree = "<group>"; };
+		79524DB3293161E800C943CB /* SmokeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmokeButton.swift; sourceTree = "<group>"; };
+		79524DB529316F9900C943CB /* TodayInfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayInfoTVC.swift; sourceTree = "<group>"; };
+		79524DB7293174FD00C943CB /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		7976BE4A291EA40400F0EB20 /* StopSmoke.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StopSmoke.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7976BE4D291EA40400F0EB20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7976BE4F291EA40400F0EB20 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +119,36 @@
 			path = MVP;
 			sourceTree = "<group>";
 		};
+		79524DAC2930EABB00C943CB /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				79524DAD2930EAD600C943CB /* SmokeView */,
+				798993CD292ADC9C006EE79A /* ResotreDataView */,
+				79524D87292C00D300C943CB /* ReusableViews */,
+				7976BE64291EBF1F00F0EB20 /* HomeView */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		79524DAD2930EAD600C943CB /* SmokeView */ = {
+			isa = PBXGroup;
+			children = (
+				79524DB2293161DE00C943CB /* View */,
+				79524DAE293118D800C943CB /* SmokeViewPresenter.swift */,
+				79524DB0293118E300C943CB /* SmokeViewVC.swift */,
+			);
+			path = SmokeView;
+			sourceTree = "<group>";
+		};
+		79524DB2293161DE00C943CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79524DB3293161E800C943CB /* SmokeButton.swift */,
+				79524DB529316F9900C943CB /* TodayInfoTVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7976BE41291EA40400F0EB20 = {
 			isa = PBXGroup;
 			children = (
@@ -128,11 +168,9 @@
 		7976BE4C291EA40400F0EB20 /* StopSmoke */ = {
 			isa = PBXGroup;
 			children = (
-				79524D87292C00D300C943CB /* ReusableViews */,
+				79524DAC2930EABB00C943CB /* VCs */,
 				798993D2292AE4D9006EE79A /* Extension */,
-				798993CD292ADC9C006EE79A /* ResotreDataView */,
 				7976BE67291ED7EB00F0EB20 /* Managers */,
-				7976BE64291EBF1F00F0EB20 /* HomeView */,
 				7976BE61291EB5A100F0EB20 /* ProjectFiles */,
 				7976BE56291EA40800F0EB20 /* Assets.xcassets */,
 				7976BE58291EA40800F0EB20 /* LaunchScreen.storyboard */,
@@ -196,6 +234,7 @@
 				79524D8C292C03BF00C943CB /* ColorExtension.swift */,
 				79524D96292C0CD000C943CB /* LocalizeExtension.swift */,
 				79524DA0292EBCF600C943CB /* DateExtension.swift */,
+				79524DB7293174FD00C943CB /* IntExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -283,15 +322,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79524DB629316F9900C943CB /* TodayInfoTVC.swift in Sources */,
 				7976BE52291EA40400F0EB20 /* HomeVC.swift in Sources */,
 				79524DA3292F93E200C943CB /* AllTimeStatisticTVC.swift in Sources */,
 				79524DA1292EBCF600C943CB /* DateExtension.swift in Sources */,
 				7976BE4E291EA40400F0EB20 /* AppDelegate.swift in Sources */,
 				7976BE50291EA40400F0EB20 /* SceneDelegate.swift in Sources */,
 				79524D9F292D841100C943CB /* InfoUIView.swift in Sources */,
+				79524DB8293174FD00C943CB /* IntExtension.swift in Sources */,
 				798993C9292ADAF8006EE79A /* DayInfo+CoreDataClass.swift in Sources */,
+				79524DB4293161E800C943CB /* SmokeButton.swift in Sources */,
 				7976BE6B291EDDF900F0EB20 /* StopSmokeModel.xcdatamodeld in Sources */,
 				798993CA292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift in Sources */,
+				79524DAF293118D800C943CB /* SmokeViewPresenter.swift in Sources */,
 				798993D1292ADCC0006EE79A /* RestoreDataPresenter.swift in Sources */,
 				79524DAB2930228200C943CB /* Router.swift in Sources */,
 				79524D8B292C013000C943CB /* DefaultAppButton.swift in Sources */,
@@ -303,6 +346,7 @@
 				7976BE63291EB5B200F0EB20 /* AssemblerBuilderProtocol.swift in Sources */,
 				798993CF292ADCB6006EE79A /* RestoreDataView.swift in Sources */,
 				798993CB292ADAF8006EE79A /* Day+CoreDataClass.swift in Sources */,
+				79524DB1293118E300C943CB /* SmokeViewVC.swift in Sources */,
 				798993C329250854006EE79A /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -46,7 +46,7 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     }
     
     func goToSmokeVC() {
-        router?.restoreVC()
+        router?.smokeVC()
     }
     // MARK: - refactor later
     func getTimeFromLastCigaret() {

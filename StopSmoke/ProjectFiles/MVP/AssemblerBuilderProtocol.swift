@@ -10,6 +10,7 @@ import UIKit
 protocol AssemblerBuilderProtocol {
     func createMainScreen(router: RouterProtocol) -> UIViewController
     func createRestoreView(router:RouterProtocol) -> UIViewController
+    func createSmokeView(router: RouterProtocol) -> UIViewController
 }
 
 class ModuleBuilder: AssemblerBuilderProtocol {
@@ -28,6 +29,15 @@ class ModuleBuilder: AssemblerBuilderProtocol {
     func createRestoreView(router:RouterProtocol) -> UIViewController {
         let view = RestoreDataView()
         let presenter = RestoreDataPresenter(view: view, coreDataManager: coredataManager)
+        view.presenter = presenter
+        return view
+    }
+    
+    func createSmokeView(router: RouterProtocol) -> UIViewController {
+        let view = SmokeVC()
+        let presenter = SmokeViewPresenter(view: view,
+                                           coredataManager: coredataManager,
+                                           router: router)
         view.presenter = presenter
         return view
     }

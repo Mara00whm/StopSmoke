@@ -14,6 +14,7 @@ protocol CoreDataManagerProtocol {
     func getDateOfLastCigaret() -> Date?
     func getCountCigarettToday() -> Int64?
     func getInfoForAllTime() -> [Day]?
+    func getInfoForToday() -> [DayInfo]
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
@@ -64,15 +65,18 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
     }
     
+    //MARK: - TEST LATER
     func smoke() {
         let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
         do {
             let obj = try viewContext.fetch(fetchRequest)
+            
             if let currentDay = obj.last?.day,
             currentDay == convertDateToString(Date() ) {
                 createNewSmokeSession()
             } else {
                 createNewDay()
+                createNewSmokeSession()
             }
         } catch {
             //MARK: - FIXLATER
@@ -105,6 +109,7 @@ class CoreDataManager: CoreDataManagerProtocol {
 
     }
     
+    //MARK: - CHANGE LATER!
     func getCountCigarettToday() -> Int64? {
         let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
         print("here")
@@ -135,11 +140,27 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
     }
     
+    func getInfoForToday() -> [DayInfo] {
+        let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
+        do {
+            let obj = try viewContext.fetch(fetchRequest)
+            //print(obj.last?.dayInfoUnwrappedArray)
+            if let day = obj.last {
+                return day.dayInfoUnwrappedArray.reversed()
+            }
+            return []
+        } catch {
+            return []
+        }
+    }
+    
     private func createNewDay() {
         let day = Day(context: viewContext)
-         let currentDay = convertDateToString(Date() )
+        var date = Date()
+        
+        let currentDay = convertDateToString(Date() )
         day.day = currentDay
-        day.totalCigarettes = 1
+        day.totalCigarettes = 0
         saveContext()
     }
 

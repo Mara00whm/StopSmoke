@@ -45,7 +45,10 @@ class Router: RouterProtocol {
     }
     
     func smokeVC() {
-        
+        if let navigationController = navigationController {
+            guard let smokeVC = assemblyBuilder?.createSmokeView(router: self) else { return }
+            navigationController.pushViewController(smokeVC, animated: true)
+        }
     }
     
     func popToRoot() {

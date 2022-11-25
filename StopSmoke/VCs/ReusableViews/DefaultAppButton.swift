@@ -21,13 +21,17 @@ class DefaultAppButton: UIButton {
     
     //MARK: - SETTING FUNCS
     
+    override var isHighlighted: Bool {
+        didSet {
+            backgroundColor = isHighlighted ? .gray : .acceptButton
+        }
+    }
+    
     private func setting() {
         backgroundColor = .acceptButton
         setTitleColor(.appBackgroundColor , for: .normal)
         layer.cornerRadius = 15
         layer.masksToBounds = true
-        layer.borderColor = UIColor.viewBackgroundColor.cgColor
-        layer.borderWidth = 1
     }
     
     func setTitle(_ title: String) {
