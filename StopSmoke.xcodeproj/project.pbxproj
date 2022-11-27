@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7935BDE42933FEE500B06292 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935BDE32933FEE400B06292 /* ImageExtension.swift */; };
+		7935BDE7293405E600B06292 /* VisualizePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935BDE6293405E600B06292 /* VisualizePresenter.swift */; };
+		7935BDE9293405ED00B06292 /* VisualizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935BDE8293405ED00B06292 /* VisualizeVC.swift */; };
 		79524D8B292C013000C943CB /* DefaultAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D8A292C013000C943CB /* DefaultAppButton.swift */; };
 		79524D8D292C03BF00C943CB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D8C292C03BF00C943CB /* ColorExtension.swift */; };
 		79524D92292C0BA300C943CB /* RestoreDataViewLocalized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79524D94292C0BA300C943CB /* RestoreDataViewLocalized.strings */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		7935BDE32933FEE400B06292 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
+		7935BDE6293405E600B06292 /* VisualizePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizePresenter.swift; sourceTree = "<group>"; };
+		7935BDE8293405ED00B06292 /* VisualizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeVC.swift; sourceTree = "<group>"; };
 		79524D8A292C013000C943CB /* DefaultAppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAppButton.swift; sourceTree = "<group>"; };
 		79524D8C292C03BF00C943CB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		79524D8E292C0B8300C943CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7935BDE5293404F600B06292 /* VisualizeView */ = {
+			isa = PBXGroup;
+			children = (
+				7935BDE6293405E600B06292 /* VisualizePresenter.swift */,
+				7935BDE8293405ED00B06292 /* VisualizeVC.swift */,
+			);
+			path = VisualizeView;
+			sourceTree = "<group>";
+		};
 		79524D87292C00D300C943CB /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +150,7 @@
 		79524DAC2930EABB00C943CB /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				7935BDE5293404F600B06292 /* VisualizeView */,
 				79524DAD2930EAD600C943CB /* SmokeView */,
 				798993CD292ADC9C006EE79A /* ResotreDataView */,
 				79524D87292C00D300C943CB /* ReusableViews */,
@@ -396,6 +410,7 @@
 				79524DB629316F9900C943CB /* TodayInfoTVC.swift in Sources */,
 				7976BE52291EA40400F0EB20 /* HomeVC.swift in Sources */,
 				79524DA3292F93E200C943CB /* AllTimeStatisticTVC.swift in Sources */,
+				7935BDE7293405E600B06292 /* VisualizePresenter.swift in Sources */,
 				79524DA1292EBCF600C943CB /* DateExtension.swift in Sources */,
 				7976BE4E291EA40400F0EB20 /* AppDelegate.swift in Sources */,
 				7976BE50291EA40400F0EB20 /* SceneDelegate.swift in Sources */,
@@ -409,6 +424,7 @@
 				798993D1292ADCC0006EE79A /* RestoreDataPresenter.swift in Sources */,
 				79524DAB2930228200C943CB /* Router.swift in Sources */,
 				79524D8B292C013000C943CB /* DefaultAppButton.swift in Sources */,
+				7935BDE9293405ED00B06292 /* VisualizeVC.swift in Sources */,
 				7935BDE42933FEE500B06292 /* ImageExtension.swift in Sources */,
 				798993D4292AE4E4006EE79A /* CalendatExtension.swift in Sources */,
 				798993CC292ADAF8006EE79A /* Day+CoreDataProperties.swift in Sources */,
