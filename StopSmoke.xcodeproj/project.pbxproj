@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7935BDE42933FEE500B06292 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935BDE32933FEE400B06292 /* ImageExtension.swift */; };
 		79524D8B292C013000C943CB /* DefaultAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D8A292C013000C943CB /* DefaultAppButton.swift */; };
 		79524D8D292C03BF00C943CB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D8C292C03BF00C943CB /* ColorExtension.swift */; };
 		79524D92292C0BA300C943CB /* RestoreDataViewLocalized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79524D94292C0BA300C943CB /* RestoreDataViewLocalized.strings */; };
@@ -36,9 +37,11 @@
 		798993CF292ADCB6006EE79A /* RestoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993CE292ADCB6006EE79A /* RestoreDataView.swift */; };
 		798993D1292ADCC0006EE79A /* RestoreDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993D0292ADCC0006EE79A /* RestoreDataPresenter.swift */; };
 		798993D4292AE4E4006EE79A /* CalendatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798993D3292AE4E4006EE79A /* CalendatExtension.swift */; };
+		C09072B94644EA204A77429F /* Pods_StopSmoke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE16D59CCD2BC3F0FDEE01D /* Pods_StopSmoke.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7935BDE32933FEE400B06292 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		79524D8A292C013000C943CB /* DefaultAppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAppButton.swift; sourceTree = "<group>"; };
 		79524D8C292C03BF00C943CB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		79524D8E292C0B8300C943CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -72,6 +75,9 @@
 		798993CE292ADCB6006EE79A /* RestoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreDataView.swift; sourceTree = "<group>"; };
 		798993D0292ADCC0006EE79A /* RestoreDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreDataPresenter.swift; sourceTree = "<group>"; };
 		798993D3292AE4E4006EE79A /* CalendatExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendatExtension.swift; sourceTree = "<group>"; };
+		B874196A24430E6E1099AF5A /* Pods-StopSmoke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopSmoke.release.xcconfig"; path = "Target Support Files/Pods-StopSmoke/Pods-StopSmoke.release.xcconfig"; sourceTree = "<group>"; };
+		CDE16D59CCD2BC3F0FDEE01D /* Pods_StopSmoke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StopSmoke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D12D4A2D65AC1FDFCE800D6A /* Pods-StopSmoke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopSmoke.debug.xcconfig"; path = "Target Support Files/Pods-StopSmoke/Pods-StopSmoke.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +85,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09072B94644EA204A77429F /* Pods_StopSmoke.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05C57A9F9ED0DCD233F9ADA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDE16D59CCD2BC3F0FDEE01D /* Pods_StopSmoke.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		79524D87292C00D300C943CB /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +169,8 @@
 			children = (
 				7976BE4C291EA40400F0EB20 /* StopSmoke */,
 				7976BE4B291EA40400F0EB20 /* Products */,
+				CD069B7C33DF8AAEF399F12F /* Pods */,
+				05C57A9F9ED0DCD233F9ADA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -235,6 +252,7 @@
 				79524D96292C0CD000C943CB /* LocalizeExtension.swift */,
 				79524DA0292EBCF600C943CB /* DateExtension.swift */,
 				79524DB7293174FD00C943CB /* IntExtension.swift */,
+				7935BDE32933FEE400B06292 /* ImageExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -250,6 +268,15 @@
 			path = CoreDataModels;
 			sourceTree = "<group>";
 		};
+		CD069B7C33DF8AAEF399F12F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D12D4A2D65AC1FDFCE800D6A /* Pods-StopSmoke.debug.xcconfig */,
+				B874196A24430E6E1099AF5A /* Pods-StopSmoke.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,9 +284,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7976BE5E291EA40800F0EB20 /* Build configuration list for PBXNativeTarget "StopSmoke" */;
 			buildPhases = (
+				51627B76EC9AF93BEECEABA0 /* [CP] Check Pods Manifest.lock */,
 				7976BE46291EA40400F0EB20 /* Sources */,
 				7976BE47291EA40400F0EB20 /* Frameworks */,
 				7976BE48291EA40400F0EB20 /* Resources */,
+				E45A16F20DCB8B1E7245800D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,6 +346,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		51627B76EC9AF93BEECEABA0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StopSmoke-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E45A16F20DCB8B1E7245800D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StopSmoke/Pods-StopSmoke-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StopSmoke/Pods-StopSmoke-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StopSmoke/Pods-StopSmoke-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7976BE46291EA40400F0EB20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -338,6 +409,7 @@
 				798993D1292ADCC0006EE79A /* RestoreDataPresenter.swift in Sources */,
 				79524DAB2930228200C943CB /* Router.swift in Sources */,
 				79524D8B292C013000C943CB /* DefaultAppButton.swift in Sources */,
+				7935BDE42933FEE500B06292 /* ImageExtension.swift in Sources */,
 				798993D4292AE4E4006EE79A /* CalendatExtension.swift in Sources */,
 				798993CC292ADAF8006EE79A /* Day+CoreDataProperties.swift in Sources */,
 				7976BE66291EBF3900F0EB20 /* HomePresenter.swift in Sources */,
@@ -493,6 +565,7 @@
 		};
 		7976BE5F291EA40800F0EB20 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D12D4A2D65AC1FDFCE800D6A /* Pods-StopSmoke.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -522,6 +595,7 @@
 		};
 		7976BE60291EA40800F0EB20 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B874196A24430E6E1099AF5A /* Pods-StopSmoke.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
