@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import JJFloatingActionButton
 
 class HomeVC: UIViewController {
 
     var presenter: HomeViewPresenterProtocol!
-
     //MARK: - VIEWS
-    
     private var counter: TimeInterval = 0
+    
+    private let floatingActionButton: JJFloatingActionButton = {
+       let view = JJFloatingActionButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     private let timeFromLastCigaretteView: InfoUIView = {
         let view = InfoUIView(title: "Time since the last cigarette")
@@ -62,6 +67,7 @@ class HomeVC: UIViewController {
     override func loadView() {
         super.loadView()
         settings()
+        setUpFAB()
     }
     
     override func viewDidLoad() {
@@ -82,7 +88,8 @@ class HomeVC: UIViewController {
         view.addSubview(averageCigarettesView)
         view.addSubview(allTimeInfoTable)
         view.addSubview(smokeButton)
-        
+        view.addSubview(floatingActionButton)
+    
         allTimeInfoTable.dataSource = self
         allTimeInfoTable.delegate = self
     }
@@ -121,6 +128,11 @@ class HomeVC: UIViewController {
         allTimeInfoTable.rightAnchor.constraint(equalTo: timeFromLastCigaretteView.rightAnchor).isActive = true
         allTimeInfoTable.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
+        floatingActionButton.rightAnchor.constraint(equalTo: view.rightAnchor,
+                                                    constant: ViewSizeConstants.rightPadding).isActive = true
+
+        floatingActionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
+                                                     constant: ViewSizeConstants.botPadding).isActive = true
     }
     //MARK: - objc funcs
     @objc private func getTimeFromLastCigaret() {
@@ -139,6 +151,7 @@ class HomeVC: UIViewController {
         static let rightPadding: CGFloat = -10
         static let headerTopPadding: CGFloat = 30
         static let topPadding: CGFloat = 15
+        static let botPadding: CGFloat = -15
         
         static let headerSizeDivider: CGFloat = 6
         static let defaultViewDivider: CGFloat = 8
@@ -152,6 +165,10 @@ class HomeVC: UIViewController {
         static let tableID: String = "allInfoTable"
         static let timerDefaultLabel: String = "-- h : -- m : -- s"
         static let counterDefaultLabel: String = "-"
+        
+        static let visualize: String = "Visualize"
+        static let health: String = "Health"
+        static let calendar: String = "Calendar"
     }
     
 }
@@ -199,5 +216,33 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         maskLayer.frame = CGRect(x: cell.bounds.origin.x, y: cell.bounds.origin.y, width: cell.bounds.width, height: cell.bounds.height).insetBy(dx: 0, dy: verticalPadding/2)
         cell.layer.mask = maskLayer
     }
+}
 
+//MARK: - Floating action button setting
+
+extension HomeVC {
+    private func setUpFAB() {
+        floatingActionButton.handleSingleActionDirectly = false
+        floatingActionButton.buttonDiameter = ViewSizeConstants.itemHeight
+        floatingActionButton.buttonColor = .acceptButton
+        floatingActionButton.buttonImage = .buttonOpenImage
+    
+        floatingActionButton.buttonAnimationConfiguration = .transition(toImage: .buttonCloseImage)
+        floatingActionButton.itemAnimationConfiguration.itemLayout = .circular()
+        
+        floatingActionButton.addItem(title: ViewStringConstants.visualize,
+                                     image: .chartImage) { _ in
+            
+        }
+        
+        floatingActionButton.addItem(title: ViewStringConstants.calendar,
+                                     image: .calendarImage) { _ in
+            
+        }
+        
+        floatingActionButton.addItem(title: ViewStringConstants.health,
+                                     image: .heartImage) { _ in
+
+        }
+    }
 }
