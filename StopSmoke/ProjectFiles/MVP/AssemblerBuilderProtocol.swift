@@ -11,6 +11,7 @@ protocol AssemblerBuilderProtocol {
     func createMainScreen(router: RouterProtocol) -> UIViewController
     func createRestoreView(router:RouterProtocol) -> UIViewController
     func createSmokeView(router: RouterProtocol) -> UIViewController
+    func createVisualizeView(router: RouterProtocol) -> UIViewController
 }
 
 class ModuleBuilder: AssemblerBuilderProtocol {
@@ -36,6 +37,15 @@ class ModuleBuilder: AssemblerBuilderProtocol {
     func createSmokeView(router: RouterProtocol) -> UIViewController {
         let view = SmokeVC()
         let presenter = SmokeViewPresenter(view: view,
+                                           coredataManager: coredataManager,
+                                           router: router)
+        view.presenter = presenter
+        return view
+    }
+    
+    func createVisualizeView(router: RouterProtocol) -> UIViewController {
+        let view = VisualizeVC()
+        let presenter = VisualizePresenter(view: view,
                                            coredataManager: coredataManager,
                                            router: router)
         view.presenter = presenter

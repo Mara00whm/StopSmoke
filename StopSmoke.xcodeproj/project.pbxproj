@@ -10,6 +10,11 @@
 		7935BDE42933FEE500B06292 /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935BDE32933FEE400B06292 /* ImageExtension.swift */; };
 		7935BDE7293405E600B06292 /* VisualizePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935BDE6293405E600B06292 /* VisualizePresenter.swift */; };
 		7935BDE9293405ED00B06292 /* VisualizeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935BDE8293405ED00B06292 /* VisualizeVC.swift */; };
+		7935BDEB2935146600B06292 /* VisualizeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935BDEA2935146600B06292 /* VisualizeModel.swift */; };
+		7935BDEE2935445B00B06292 /* NumberOfCigarettesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935BDED2935445B00B06292 /* NumberOfCigarettesView.swift */; };
+		7935BDF0293559B600B06292 /* VisualizeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935BDEF293559B600B06292 /* VisualizeTVC.swift */; };
+		7935BDF22935691600B06292 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7935BDF12935691600B06292 /* Images.xcassets */; };
+		7935BDF429367E0A00B06292 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7935BDF329367E0900B06292 /* PopUpView.swift */; };
 		79524D8B292C013000C943CB /* DefaultAppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D8A292C013000C943CB /* DefaultAppButton.swift */; };
 		79524D8D292C03BF00C943CB /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79524D8C292C03BF00C943CB /* ColorExtension.swift */; };
 		79524D92292C0BA300C943CB /* RestoreDataViewLocalized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79524D94292C0BA300C943CB /* RestoreDataViewLocalized.strings */; };
@@ -46,6 +51,11 @@
 		7935BDE32933FEE400B06292 /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		7935BDE6293405E600B06292 /* VisualizePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizePresenter.swift; sourceTree = "<group>"; };
 		7935BDE8293405ED00B06292 /* VisualizeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeVC.swift; sourceTree = "<group>"; };
+		7935BDEA2935146600B06292 /* VisualizeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeModel.swift; sourceTree = "<group>"; };
+		7935BDED2935445B00B06292 /* NumberOfCigarettesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfCigarettesView.swift; sourceTree = "<group>"; };
+		7935BDEF293559B600B06292 /* VisualizeTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualizeTVC.swift; sourceTree = "<group>"; };
+		7935BDF12935691600B06292 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7935BDF329367E0900B06292 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		79524D8A292C013000C943CB /* DefaultAppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAppButton.swift; sourceTree = "<group>"; };
 		79524D8C292C03BF00C943CB /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		79524D8E292C0B8300C943CB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -107,10 +117,21 @@
 		7935BDE5293404F600B06292 /* VisualizeView */ = {
 			isa = PBXGroup;
 			children = (
+				7935BDEC2935444000B06292 /* View */,
 				7935BDE6293405E600B06292 /* VisualizePresenter.swift */,
 				7935BDE8293405ED00B06292 /* VisualizeVC.swift */,
+				7935BDEA2935146600B06292 /* VisualizeModel.swift */,
 			);
 			path = VisualizeView;
+			sourceTree = "<group>";
+		};
+		7935BDEC2935444000B06292 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7935BDED2935445B00B06292 /* NumberOfCigarettesView.swift */,
+				7935BDEF293559B600B06292 /* VisualizeTVC.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		79524D87292C00D300C943CB /* ReusableViews */ = {
@@ -118,6 +139,7 @@
 			children = (
 				79524D9E292D841100C943CB /* InfoUIView.swift */,
 				79524D8A292C013000C943CB /* DefaultAppButton.swift */,
+				7935BDF329367E0900B06292 /* PopUpView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -206,6 +228,7 @@
 				7976BE56291EA40800F0EB20 /* Assets.xcassets */,
 				7976BE58291EA40800F0EB20 /* LaunchScreen.storyboard */,
 				7976BE5B291EA40800F0EB20 /* Info.plist */,
+				7935BDF12935691600B06292 /* Images.xcassets */,
 			);
 			path = StopSmoke;
 			sourceTree = "<group>";
@@ -353,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79524D92292C0BA300C943CB /* RestoreDataViewLocalized.strings in Resources */,
+				7935BDF22935691600B06292 /* Images.xcassets in Resources */,
 				7976BE5A291EA40800F0EB20 /* LaunchScreen.storyboard in Resources */,
 				7976BE57291EA40800F0EB20 /* Assets.xcassets in Resources */,
 			);
@@ -407,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7935BDF429367E0A00B06292 /* PopUpView.swift in Sources */,
 				79524DB629316F9900C943CB /* TodayInfoTVC.swift in Sources */,
 				7976BE52291EA40400F0EB20 /* HomeVC.swift in Sources */,
 				79524DA3292F93E200C943CB /* AllTimeStatisticTVC.swift in Sources */,
@@ -419,14 +444,17 @@
 				798993C9292ADAF8006EE79A /* DayInfo+CoreDataClass.swift in Sources */,
 				79524DB4293161E800C943CB /* SmokeButton.swift in Sources */,
 				7976BE6B291EDDF900F0EB20 /* StopSmokeModel.xcdatamodeld in Sources */,
+				7935BDEB2935146600B06292 /* VisualizeModel.swift in Sources */,
 				798993CA292ADAF8006EE79A /* DayInfo+CoreDataProperties.swift in Sources */,
 				79524DAF293118D800C943CB /* SmokeViewPresenter.swift in Sources */,
 				798993D1292ADCC0006EE79A /* RestoreDataPresenter.swift in Sources */,
 				79524DAB2930228200C943CB /* Router.swift in Sources */,
 				79524D8B292C013000C943CB /* DefaultAppButton.swift in Sources */,
+				7935BDEE2935445B00B06292 /* NumberOfCigarettesView.swift in Sources */,
 				7935BDE9293405ED00B06292 /* VisualizeVC.swift in Sources */,
 				7935BDE42933FEE500B06292 /* ImageExtension.swift in Sources */,
 				798993D4292AE4E4006EE79A /* CalendatExtension.swift in Sources */,
+				7935BDF0293559B600B06292 /* VisualizeTVC.swift in Sources */,
 				798993CC292ADAF8006EE79A /* Day+CoreDataProperties.swift in Sources */,
 				7976BE66291EBF3900F0EB20 /* HomePresenter.swift in Sources */,
 				79524D8D292C03BF00C943CB /* ColorExtension.swift in Sources */,

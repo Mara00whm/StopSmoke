@@ -15,14 +15,14 @@ class SmokeVC: UIViewController {
     private let relaxButton: DefaultAppButton = {
         let view = DefaultAppButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Relax")
+        view.setTitle(ViewStringConstants.relax)
         return view
     }()
     
     private let smokeButton: SmokeButton = {
        let view = SmokeButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Smoke")
+        view.setTitle(ViewStringConstants.smoke)
         view.addTarget(self, action: #selector(smoke), for: .touchUpInside)
         return view
     }()
@@ -32,7 +32,7 @@ class SmokeVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textColor = .viewBackgroundColor
         view.textAlignment = .center
-        view.text = "Today sessions"
+        view.text = ViewStringConstants.today
         view.font = UIFont.boldSystemFont(ofSize: 25)
         return view
     }()
@@ -114,6 +114,9 @@ class SmokeVC: UIViewController {
 
     private enum ViewStringConstants {
         static let tableViewID: String = "todaySessionsTableView"
+        static let smoke: String = "Smoke"
+        static let relax: String = "Relax"
+        static let today: String = "Today sessions"
     }
 }
 

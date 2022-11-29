@@ -16,6 +16,7 @@ protocol RouterProtocol: RouterMain {
     func restoreVC()
     func initialVC()
     func smokeVC()
+    func visualizeVC()
     func popToRoot()
 }
 
@@ -25,6 +26,8 @@ class Router: RouterProtocol {
     
     var assemblyBuilder: AssemblerBuilderProtocol?
 
+    var mainView: UIViewController?
+    
     init(navigationController: UINavigationController, assemblyBuilder: AssemblerBuilderProtocol) {
         self.navigationController = navigationController
         self.assemblyBuilder = assemblyBuilder
@@ -40,6 +43,7 @@ class Router: RouterProtocol {
     func initialVC() {
         if let navigationController = navigationController {
             guard let mainVC = assemblyBuilder?.createMainScreen(router: self) else { return }
+            mainView = mainVC
             navigationController.viewControllers = [mainVC]
         }
     }
@@ -51,9 +55,18 @@ class Router: RouterProtocol {
         }
     }
     
+    func visualizeVC() {
+        guard let visualizeVC = assemblyBuilder?.createVisualizeView(router: self) else { return }
+        visualizeVC.modalPresentationStyle = .fullScreen
+
+        if let mainView = mainView {
+            
+            mainView.present(visualizeVC, animated: true)
+        }
+    }
     func popToRoot() {
-        if let navigationController = navigationController {
-            navigationController.popViewController(animated: true)
+        if let mainView = mainView {
+            mainView.dismiss(animated: true)
         }
     }
 
