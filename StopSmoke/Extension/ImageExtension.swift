@@ -30,4 +30,8 @@ extension UIImage {
         UIImage(systemName: "heart.text.square")!
     }
     
+    static var closeViewImage: UIImage {
+        UIImage(systemName: "chevron.down")!
+    }
+    
 }

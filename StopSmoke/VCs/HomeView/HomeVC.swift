@@ -11,9 +11,12 @@ import JJFloatingActionButton
 class HomeVC: UIViewController {
 
     var presenter: HomeViewPresenterProtocol!
-    //MARK: - VIEWS
+    
     private var counter: TimeInterval = 0
     
+    var timer: Timer?
+
+    //MARK: - VIEWS
     private let floatingActionButton: JJFloatingActionButton = {
        let view = JJFloatingActionButton()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -78,6 +81,8 @@ class HomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         createAnchors()
+        timer?.invalidate()
+        presenter.viewWillAppear()
     }
     
     //MARK: - SETTING FUNCS
@@ -176,7 +181,7 @@ class HomeVC: UIViewController {
 extension HomeVC: HomeViewProtocol {
     func setTimeFromLastCigaret(time: TimeInterval) {
         counter = time
-        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getTimeFromLastCigaret), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getTimeFromLastCigaret), userInfo: nil, repeats: true)
     }
     
     func setTotalCigaretts(total: Int64) {
@@ -232,7 +237,7 @@ extension HomeVC {
         
         floatingActionButton.addItem(title: ViewStringConstants.visualize,
                                      image: .chartImage) { _ in
-            
+            self.presenter.goToVisualizeVC()
         }
         
         floatingActionButton.addItem(title: ViewStringConstants.calendar,

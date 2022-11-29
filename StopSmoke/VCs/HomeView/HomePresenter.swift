@@ -16,8 +16,10 @@ protocol HomeViewProtocol: AnyObject {
 protocol HomeViewPresenterProtocol {
     init(view: HomeViewProtocol, coredataManager: CoreDataManagerProtocol, router: RouterProtocol)
     var allTimeTableInfo: [Day] {get}
-    func getTimeFromLastCigaret()
     func goToSmokeVC()
+    func goToVisualizeVC()
+    
+    func viewWillAppear()
 }
 
 
@@ -47,6 +49,16 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     
     func goToSmokeVC() {
         router?.smokeVC()
+    }
+    
+    func goToVisualizeVC() {
+        router?.visualizeVC()
+    }
+    
+    func viewWillAppear() {
+        self.getTimeFromLastCigaret()
+        self.getTotalTodayCigaretts()
+        self.getInfoForAllTime()
     }
     // MARK: - refactor later
     func getTimeFromLastCigaret() {

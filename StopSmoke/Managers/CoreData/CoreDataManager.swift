@@ -15,6 +15,7 @@ protocol CoreDataManagerProtocol {
     func getCountCigarettToday() -> Int64?
     func getInfoForAllTime() -> [Day]?
     func getInfoForToday() -> [DayInfo]
+    func getNumberOfCigarettes() -> Int64?
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
@@ -47,6 +48,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
     }
     
+    //MARK: - View funcs
     func createNewSmokeSession() {
         let smoke = DayInfo(context: viewContext)
         smoke.smokeDate = Date()
@@ -56,12 +58,10 @@ class CoreDataManager: CoreDataManagerProtocol {
             if let currentDay = obj.last {
                 currentDay.addToDayInfo(smoke)
                 currentDay.totalCigarettes += 1
-                print(currentDay)
                 saveContext()
             }
         } catch {
-            //MARK: - FIXLATER
-            print("erorsdfsdf")
+            //TODO: - add catch
         }
     }
     
@@ -79,20 +79,16 @@ class CoreDataManager: CoreDataManagerProtocol {
                 createNewSmokeSession()
             }
         } catch {
-            //MARK: - FIXLATER
-            print("got some errors")
+            //TODO: - add catch
         }
     }
     
     func countCigarettesBefore(started: Date, totalCigarettes: Int) {
         let periodLabel = convertDateToString(started) + " - " + convertDateToString(Date())
-        
         let period = Day(context: viewContext)
         period.day = periodLabel
         period.totalCigarettes = Int64(totalCigarettes)
-        print(period)
         saveContext()
-        
     }
     
     func getDateOfLastCigaret() -> Date? {
@@ -100,27 +96,20 @@ class CoreDataManager: CoreDataManagerProtocol {
 
         do {
             let obj = try viewContext.fetch(fetchRequest)
-            print("Fetching")
             return obj.last?.dayInfoUnwrappedArray.last?.smokeDate
-
         } catch {
             return nil
         }
 
     }
-    
-    //MARK: - CHANGE LATER!
+
     func getCountCigarettToday() -> Int64? {
         let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
-        print("here")
         do {
             let obj = try viewContext.fetch(fetchRequest)
-            print(obj.last?.totalCigarettes)
-            return obj.last?.totalCigarettes
-            
+            return obj.last?.day == convertDateToString(Date()) ? obj.last?.totalCigarettes : 0
         } catch {
-            print("here")
-            return nil
+            return 0
         }
     }
 
@@ -144,7 +133,6 @@ class CoreDataManager: CoreDataManagerProtocol {
         let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
         do {
             let obj = try viewContext.fetch(fetchRequest)
-            //print(obj.last?.dayInfoUnwrappedArray)
             if let day = obj.last {
                 return day.dayInfoUnwrappedArray.reversed()
             }
@@ -154,10 +142,23 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
     }
     
+    func getNumberOfCigarettes() -> Int64? {
+        let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
+        var temp: Int64 = 0
+        do {
+            let obj = try viewContext.fetch(fetchRequest)
+            
+            for i in obj {
+                temp += i.totalCigarettes
+            }
+            return temp
+        } catch {
+            return nil
+        }
+    }
+    //MARK: - Private funcs
     private func createNewDay() {
         let day = Day(context: viewContext)
-        var date = Date()
-        
         let currentDay = convertDateToString(Date() )
         day.day = currentDay
         day.totalCigarettes = 0
@@ -168,21 +169,6 @@ class CoreDataManager: CoreDataManagerProtocol {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMM d, YY"
         return dateFormatter.string(from: date)
-    }
-    
-    
-    func deleteAllData() {
-        let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
-        do {
-            let obj = try viewContext.fetch(fetchRequest)
-            
-            for i in obj {
-                try viewContext.delete(i)
-            }
-            try viewContext.save()
-        } catch {
-            print("Asd")
-        }
     }
     
 }
