@@ -17,6 +17,7 @@ protocol RouterProtocol: RouterMain {
     func initialVC()
     func smokeVC()
     func visualizeVC()
+    func healthVC()
     func popToRoot()
 }
 
@@ -62,6 +63,15 @@ class Router: RouterProtocol {
         if let mainView = mainView {
             
             mainView.present(visualizeVC, animated: true)
+        }
+    }
+    
+    func healthVC() {
+        guard let healthVC = assemblyBuilder?.createHealthView(router: self) else { return }
+        healthVC.modalPresentationStyle = .fullScreen
+        
+        if let mainView = mainView {
+            mainView.present(healthVC, animated: true)
         }
     }
     func popToRoot() {

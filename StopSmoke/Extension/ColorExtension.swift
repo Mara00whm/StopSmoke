@@ -21,4 +21,8 @@ extension UIColor {
         UIColor(named: "buttonBackgroundColor") ?? UIColor.blue
     }
     
+    static var healthViewColor: UIColor {
+        UIColor(named: "progressiveViewTint") ?? UIColor.systemGreen
+    }
+    
 }

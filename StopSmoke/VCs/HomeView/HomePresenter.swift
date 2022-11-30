@@ -18,7 +18,7 @@ protocol HomeViewPresenterProtocol {
     var allTimeTableInfo: [Day] {get}
     func goToSmokeVC()
     func goToVisualizeVC()
-    
+    func goToHealthVC()
     func viewWillAppear()
 }
 
@@ -55,6 +55,10 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
         router?.visualizeVC()
     }
     
+    func goToHealthVC() {
+        router?.healthVC()
+    }
+    
     func viewWillAppear() {
         self.getTimeFromLastCigaret()
         self.getTotalTodayCigaretts()
@@ -62,7 +66,7 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     }
     // MARK: - refactor later
     func getTimeFromLastCigaret() {
-        if let date = coredataManager.getDateOfLastCigaret() {
+        if let date = coredataManager.getDateOfLastCigarette() {
             view?.setTimeFromLastCigaret(time: Date() - date)
         }
     }

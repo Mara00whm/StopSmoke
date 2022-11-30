@@ -12,6 +12,7 @@ protocol AssemblerBuilderProtocol {
     func createRestoreView(router:RouterProtocol) -> UIViewController
     func createSmokeView(router: RouterProtocol) -> UIViewController
     func createVisualizeView(router: RouterProtocol) -> UIViewController
+    func createHealthView(router: RouterProtocol) -> UIViewController
 }
 
 class ModuleBuilder: AssemblerBuilderProtocol {
@@ -48,6 +49,15 @@ class ModuleBuilder: AssemblerBuilderProtocol {
         let presenter = VisualizePresenter(view: view,
                                            coredataManager: coredataManager,
                                            router: router)
+        view.presenter = presenter
+        return view
+    }
+    
+    func createHealthView(router: RouterProtocol) -> UIViewController {
+        let view = HealthView()
+        let presenter = HealthPresenter(view: view,
+                                        coredataManager: coredataManager,
+                                        router: router)
         view.presenter = presenter
         return view
     }

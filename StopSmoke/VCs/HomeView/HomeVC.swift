@@ -55,6 +55,7 @@ class HomeVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.register(AllTimeStatisticTVC.self,
                       forCellReuseIdentifier: ViewStringConstants.tableID)
+        view.backgroundColor = .appBackgroundColor
         return view
     }()
 
@@ -247,7 +248,7 @@ extension HomeVC {
         
         floatingActionButton.addItem(title: ViewStringConstants.health,
                                      image: .heartImage) { _ in
-
+            self.presenter.goToHealthVC()
         }
     }
 }

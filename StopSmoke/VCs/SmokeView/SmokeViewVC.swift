@@ -41,6 +41,7 @@ class SmokeVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.register(TodayInfoTVC.self,
                       forCellReuseIdentifier: ViewStringConstants.tableViewID)
+        view.backgroundColor = .appBackgroundColor
         return view
     }()
     //MARK: - OVERRIDE FUNCS
@@ -78,6 +79,7 @@ class SmokeVC: UIViewController {
     
     private func createAnchors(){
         let safeArea = view.safeAreaLayoutGuide
+
         smokeButton.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: ViewSizeConstants.topPadding).isActive = true
         smokeButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: ViewSizeConstants.leftPadding).isActive = true
         smokeButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: ViewSizeConstants.rightPadding).isActive = true

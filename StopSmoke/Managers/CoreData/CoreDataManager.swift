@@ -11,7 +11,7 @@ import CoreData
 protocol CoreDataManagerProtocol {
     func smoke()
     func countCigarettesBefore(started: Date, totalCigarettes: Int)
-    func getDateOfLastCigaret() -> Date?
+    func getDateOfLastCigarette() -> Date?
     func getCountCigarettToday() -> Int64?
     func getInfoForAllTime() -> [Day]?
     func getInfoForToday() -> [DayInfo]
@@ -48,8 +48,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
     }
     
-    //MARK: - View funcs
-    func createNewSmokeSession() {
+    private func createNewSmokeSession() {
         let smoke = DayInfo(context: viewContext)
         smoke.smokeDate = Date()
         let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
@@ -65,7 +64,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         }
     }
     
-    //MARK: - TEST LATER
+    //MARK: - View funcs
     func smoke() {
         let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
         do {
@@ -91,7 +90,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         saveContext()
     }
     
-    func getDateOfLastCigaret() -> Date? {
+    func getDateOfLastCigarette() -> Date? {
         let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
 
         do {
