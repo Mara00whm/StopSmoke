@@ -35,6 +35,7 @@ class VisualizeVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.register(VisualizeTVC.self,
                       forCellReuseIdentifier: ViewStringConstants.tableId)
+        view.backgroundColor = .appBackgroundColor
         return view
     }()
     

@@ -34,4 +34,28 @@ extension UIImage {
         UIImage(systemName: "chevron.down")!
     }
     
+    static var lungs: UIImage {
+        UIImage(systemName: "lungs")!
+    }
+    
+    static var chartLine: UIImage {
+        UIImage(systemName: "chart.line.uptrend.xyaxis")!
+    }
+    
+    static var faceDashed: UIImage {
+        UIImage(systemName: "face.dashed.fill")!
+    }
+    
+    static var stethoscope: UIImage {
+        UIImage(systemName: "stethoscope")!
+    }
+    
+    static var arrowDown: UIImage {
+        UIImage(systemName: "arrow.down")!
+    }
+    
+    static var heart: UIImage {
+        UIImage(systemName: "heart")!
+    }
+    
 }
