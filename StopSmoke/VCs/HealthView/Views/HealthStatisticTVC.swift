@@ -16,14 +16,14 @@ class HealthStatisticTVC: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
         view.contentMode = .scaleAspectFit
-        view.tintColor = .healthViewColor
+        view.tintColor = .appBackgroundColor
         return view
     }()
     
     private let cellDescLabel: UILabel = {
        let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.textColor = .healthViewColor
+        view.textColor = .appBackgroundColor
         view.numberOfLines = 0
         return view
     }()
@@ -31,7 +31,7 @@ class HealthStatisticTVC: UITableViewCell {
     private let procentLabel: UILabel = {
        let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.textColor = .healthViewColor
+        view.textColor = .appBackgroundColor
         view.textAlignment = .center
         return view
     }()
@@ -39,7 +39,7 @@ class HealthStatisticTVC: UITableViewCell {
     private let progressView: UIProgressView = {
        let view = UIProgressView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.tintColor = .healthViewColor
+        view.tintColor = .appBackgroundColor
         return view
     }()
     

@@ -69,7 +69,7 @@ class VisualizeTVC: UITableViewCell {
         itemName.text = desc + " (\(value) metres)"
         itemImage.image = UIImage(named: imageName)
         procentLabel.text = "\(Int(procentValue))%"
-        progressView.setProgress(Float(cigarettesMetres/value), animated: true)
+        progressView.setProgress(Float(cigarettesMetres/value), animated: false)
     
     }
     

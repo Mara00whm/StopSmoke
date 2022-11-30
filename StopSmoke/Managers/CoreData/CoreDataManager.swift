@@ -16,6 +16,10 @@ protocol CoreDataManagerProtocol {
     func getInfoForAllTime() -> [Day]?
     func getInfoForToday() -> [DayInfo]
     func getNumberOfCigarettes() -> Int64?
+    
+    func addNewCigarettePack(price: Double)
+    func getCigarettePacks() -> [CigarettePacks]
+    func getSpentMoney() -> Double
 }
 
 class CoreDataManager: CoreDataManagerProtocol {
@@ -155,6 +159,40 @@ class CoreDataManager: CoreDataManagerProtocol {
             return nil
         }
     }
+    
+    func addNewCigarettePack(price: Double) {
+        let pack = CigarettePacks(context: viewContext)
+        pack.day = Date()
+        pack.price = price
+        saveContext()
+    }
+    
+    func getCigarettePacks() -> [CigarettePacks] {
+        let fetchRequest: NSFetchRequest<CigarettePacks> = CigarettePacks.fetchRequest()
+        
+        do {
+            let obj = try viewContext.fetch(fetchRequest)
+            
+            return obj
+        } catch {
+            return []
+        }
+    }
+    
+    func getSpentMoney() -> Double {
+        let fetchRequest: NSFetchRequest<CigarettePacks> = CigarettePacks.fetchRequest()
+        var count: Double = 0
+        do {
+            let obj = try viewContext.fetch(fetchRequest)
+            
+            for i in obj {
+                count += i.price
+            }
+            return count
+        } catch {
+            return 0
+        }
+    }
     //MARK: - Private funcs
     private func createNewDay() {
         let day = Day(context: viewContext)
@@ -171,4 +209,3 @@ class CoreDataManager: CoreDataManagerProtocol {
     }
     
 }
-

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D62" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CigarettePacks" representedClassName=".CigarettePacks" syncable="YES">
+        <attribute name="day" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
     <entity name="Day" representedClassName="Day" syncable="YES">
         <attribute name="day" optional="YES" attributeType="String"/>
         <attribute name="totalCigarettes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -12,5 +16,6 @@
     <elements>
         <element name="Day" positionX="-63" positionY="-18" width="128" height="74"/>
         <element name="DayInfo" positionX="-54" positionY="-9" width="128" height="59"/>
+        <element name="CigarettePacks" positionX="-54" positionY="9" width="128" height="59"/>
     </elements>
 </model>

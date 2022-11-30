@@ -15,7 +15,7 @@ protocol HealthPresenterProtocol {
     init(view: HealthViewProtocol,
          coredataManager: CoreDataManagerProtocol,
          router: RouterProtocol)
-    func viewWillAppear()
+    func loadData()
     func closeView()
     
     var timeFromLastCigarette: Double {get}
@@ -41,7 +41,7 @@ class HealthPresenter: HealthPresenterProtocol {
         self.coredataManager = coredataManager
     }
     
-    func viewWillAppear() {
+    func loadData() {
         if let dateOfLastCigarette = coredataManager.getDateOfLastCigarette() {
             timeFromLastCigarette = (Date() - dateOfLastCigarette)/3600
         }
