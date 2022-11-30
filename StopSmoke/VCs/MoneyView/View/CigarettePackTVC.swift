@@ -1,13 +1,13 @@
 //
-//  AllTimeStatisticTVC.swift
+//  CigarettePackTVC.swift
 //  StopSmoke
 //
-//  Created by Marat on 24.11.2022.
+//  Created by Marat on 30.11.2022.
 //
 
 import UIKit
 
-class AllTimeStatisticTVC: UITableViewCell {
+class CigarettePackCell: UITableViewCell {
 
     // MARK: - Views
     private let dateLabel: UILabel = {
@@ -17,7 +17,7 @@ class AllTimeStatisticTVC: UITableViewCell {
         return view
     }()
     
-    private let totalCigarettes: UILabel = {
+    private let cigarettePackPrice: UILabel = {
        let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textColor = .appBackgroundColor
@@ -29,7 +29,7 @@ class AllTimeStatisticTVC: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .viewBackgroundColor
         contentView.addSubview(dateLabel)
-        contentView.addSubview(totalCigarettes)
+        contentView.addSubview(cigarettePackPrice)
     }
     
     required init?(coder: NSCoder) {
@@ -42,9 +42,14 @@ class AllTimeStatisticTVC: UITableViewCell {
     }
     
     //MARK: - SETTING FUNCS
-    func setInfo(_ s: String, countCigarettes: Int64) {
-        dateLabel.text = s
-        totalCigarettes.text = "\(countCigarettes)"
+    func setInfo(_ s: Date, countCigarettes: Double) {
+        let df = DateFormatter()
+        df.dateFormat = "YYYY MMM d, HH : mm"
+        df.locale = Locale(identifier: "en_US_POSIX")
+        df.timeZone = TimeZone(identifier: "UTC")!
+        
+        dateLabel.text = df.string(from: s)
+        cigarettePackPrice.text = "\(countCigarettes)$"
     }
     
     private func createAnchors() {
@@ -52,9 +57,9 @@ class AllTimeStatisticTVC: UITableViewCell {
         dateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: ViewSizeConstants.topPadding).isActive = true
         dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: ViewSizeConstants.bottomPadding).isActive = true
         
-        totalCigarettes.leftAnchor.constraint(equalTo: dateLabel.rightAnchor, constant: ViewSizeConstants.leftPadding).isActive = true
-        totalCigarettes.topAnchor.constraint(equalTo: dateLabel.topAnchor).isActive = true
-        totalCigarettes.bottomAnchor.constraint(equalTo: dateLabel.bottomAnchor).isActive = true
+        cigarettePackPrice.leftAnchor.constraint(equalTo: dateLabel.rightAnchor, constant: ViewSizeConstants.leftPadding).isActive = true
+        cigarettePackPrice.topAnchor.constraint(equalTo: dateLabel.topAnchor).isActive = true
+        cigarettePackPrice.bottomAnchor.constraint(equalTo: dateLabel.bottomAnchor).isActive = true
     }
     
     private enum ViewSizeConstants {
@@ -62,5 +67,4 @@ class AllTimeStatisticTVC: UITableViewCell {
         static let leftPadding: CGFloat = 15
         static let bottomPadding: CGFloat = -15
     }
-
 }

@@ -9,10 +9,11 @@ import UIKit
 
 protocol AssemblerBuilderProtocol {
     func createMainScreen(router: RouterProtocol) -> UIViewController
-    func createRestoreView(router:RouterProtocol) -> UIViewController
+    func createRestoreView(router: RouterProtocol, userdefaultsProtocol: UserDefaultsProtocol) -> UIViewController
     func createSmokeView(router: RouterProtocol) -> UIViewController
     func createVisualizeView(router: RouterProtocol) -> UIViewController
     func createHealthView(router: RouterProtocol) -> UIViewController
+    func createMoneyView(router: RouterProtocol) -> UIViewController
 }
 
 class ModuleBuilder: AssemblerBuilderProtocol {
@@ -28,9 +29,12 @@ class ModuleBuilder: AssemblerBuilderProtocol {
         return view
     }
 
-    func createRestoreView(router:RouterProtocol) -> UIViewController {
+    func createRestoreView(router: RouterProtocol, userdefaultsProtocol: UserDefaultsProtocol) -> UIViewController {
         let view = RestoreDataView()
-        let presenter = RestoreDataPresenter(view: view, coreDataManager: coredataManager)
+        let presenter = RestoreDataPresenter(view: view,
+                                             coreDataManager: coredataManager,
+                                             router: router,
+                                             userdefaultsManager: userdefaultsProtocol)
         view.presenter = presenter
         return view
     }
@@ -58,6 +62,15 @@ class ModuleBuilder: AssemblerBuilderProtocol {
         let presenter = HealthPresenter(view: view,
                                         coredataManager: coredataManager,
                                         router: router)
+        view.presenter = presenter
+        return view
+    }
+    
+    func createMoneyView(router: RouterProtocol) -> UIViewController {
+        let view = MoneyView()
+        let presenter = MoneyPresenter(view: view,
+                                       coredataManager: coredataManager,
+                                       router: router)
         view.presenter = presenter
         return view
     }

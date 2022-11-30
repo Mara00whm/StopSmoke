@@ -10,6 +10,7 @@ import Foundation
 protocol HomeViewProtocol: AnyObject {
     func setTimeFromLastCigaret(time: TimeInterval)
     func setTotalCigaretts(total: Int64)
+    func setMoneySpent(_ money: Double)
     func reloadTable()
 }
 
@@ -19,7 +20,8 @@ protocol HomeViewPresenterProtocol {
     func goToSmokeVC()
     func goToVisualizeVC()
     func goToHealthVC()
-    func viewWillAppear()
+    func goToMoneyVC()
+    func loadData()
 }
 
 
@@ -47,22 +49,11 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
         self.getInfoForAllTime()
     }
     
-    func goToSmokeVC() {
-        router?.smokeVC()
-    }
-    
-    func goToVisualizeVC() {
-        router?.visualizeVC()
-    }
-    
-    func goToHealthVC() {
-        router?.healthVC()
-    }
-    
-    func viewWillAppear() {
+    func loadData() {
         self.getTimeFromLastCigaret()
         self.getTotalTodayCigaretts()
         self.getInfoForAllTime()
+        self.getSpentMoney()
     }
     // MARK: - refactor later
     func getTimeFromLastCigaret() {
@@ -80,4 +71,26 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
         allTimeTableInfo = coredataManager.getInfoForAllTime() ?? []
     }
     
+    func getSpentMoney() {
+        let money = coredataManager.getSpentMoney()
+        view?.setMoneySpent(money)
+    }
+    
+    // MARK: - Router funcs
+    func goToSmokeVC() {
+        router?.smokeVC()
+    }
+    
+    func goToVisualizeVC() {
+        router?.visualizeVC()
+    }
+    
+    func goToHealthVC() {
+        router?.healthVC()
+    }
+    
+    func goToMoneyVC() {
+        router?.moneyVC()
+    }
+
 }

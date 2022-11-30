@@ -19,6 +19,7 @@ class RestoreDataView: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle(ViewTextConstants.neverSmokedButton.rawValue.localize(from: localizedName), for: .normal)
         view.setTitleColor(UIColor.lightGray, for: .normal)
+        view.addTarget(self, action: #selector(goToMainVC), for: .touchUpInside)
         return view
     }()
     
@@ -149,6 +150,11 @@ class RestoreDataView: UIViewController {
         if let cigarettes = Int(averageCigarettesTextField.text ?? "0") {
             presenter.countTotalCigarettes(firstSmokeDate.date, cigarettesPerDay: cigarettes)
         }
+        goToMainVC()
+    }
+    
+    @objc private func goToMainVC() {
+        presenter.goToMainView()
     }
 
     //MARK: - CONSTANTS

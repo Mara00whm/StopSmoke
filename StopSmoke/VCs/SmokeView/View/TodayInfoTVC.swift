@@ -52,12 +52,21 @@ class TodayInfoTVC: UITableViewCell {
     }
     
     private func createAnchors() {
-        dateLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 15).isActive = true
-        dateLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
-        dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15).isActive = true
+        dateLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor,
+                                        constant: ViewSizeConstants.leftPadding).isActive = true
+        dateLabel.topAnchor.constraint(equalTo: contentView.topAnchor,
+                                       constant: ViewSizeConstants.topPadding).isActive = true
+        dateLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,
+                                          constant: ViewSizeConstants.botPadding).isActive = true
         
         cigaretteNumber.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         cigaretteNumber.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+    }
+    
+    private enum ViewSizeConstants {
+        static let leftPadding: CGFloat = 15
+        static let topPadding: CGFloat = 15
+        static let botPadding: CGFloat = -15
     }
 }
 

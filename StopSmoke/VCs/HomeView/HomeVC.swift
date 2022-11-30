@@ -42,7 +42,7 @@ class HomeVC: UIViewController {
     }()
     
     private let averageCigarettesView: InfoUIView = {
-        let view = InfoUIView(title: "Average cigarettes")
+        let view = InfoUIView(title: "Money spent($)")
          view.translatesAutoresizingMaskIntoConstraints = false
          view.clipsToBounds = true
          view.layer.cornerRadius = ViewSizeConstants.defaultCornerRadius
@@ -83,7 +83,7 @@ class HomeVC: UIViewController {
         super.viewWillAppear(animated)
         createAnchors()
         timer?.invalidate()
-        presenter.viewWillAppear()
+        presenter.loadData()
     }
     
     //MARK: - SETTING FUNCS
@@ -174,12 +174,17 @@ class HomeVC: UIViewController {
         
         static let visualize: String = "Visualize"
         static let health: String = "Health"
-        static let calendar: String = "Calendar"
+        static let calendar: String = "Money spent"
     }
     
 }
 
 extension HomeVC: HomeViewProtocol {
+
+    func setMoneySpent(_ money: Double) {
+        averageCigarettesView.setValues(money.roundToPlace())
+    }
+    
     func setTimeFromLastCigaret(time: TimeInterval) {
         counter = time
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getTimeFromLastCigaret), userInfo: nil, repeats: true)
@@ -243,7 +248,7 @@ extension HomeVC {
         
         floatingActionButton.addItem(title: ViewStringConstants.calendar,
                                      image: .calendarImage) { _ in
-            
+            self.presenter.goToMoneyVC()
         }
         
         floatingActionButton.addItem(title: ViewStringConstants.health,

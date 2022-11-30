@@ -38,7 +38,7 @@ class HealthView: UIViewController {
         view.rowHeight = UITableView.automaticDimension
         view.register(HealthStatisticTVC.self,
                       forCellReuseIdentifier: ViewStringConstants.tableID)
-        view.backgroundColor = .healthViewColor
+        view.backgroundColor = .appBackgroundColor
         return view
     }()
     
@@ -51,13 +51,13 @@ class HealthView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .healthViewColor
+        view.backgroundColor = .appBackgroundColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         createAnchors()
-        presenter.viewWillAppear()
+        presenter.loadData()
     }
     
     //MARK: - SETTING FUNCS
