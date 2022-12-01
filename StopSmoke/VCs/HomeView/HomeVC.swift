@@ -33,7 +33,7 @@ class HomeVC: UIViewController {
     }()
     
     private let todayCigarettesView: InfoUIView = {
-       let view = InfoUIView(title: "Today cigarettes")
+        let view = InfoUIView(title: ViewStringConstants.todayCigarettes)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.clipsToBounds = true
         view.layer.cornerRadius = ViewSizeConstants.defaultCornerRadius
@@ -42,7 +42,7 @@ class HomeVC: UIViewController {
     }()
     
     private let averageCigarettesView: InfoUIView = {
-        let view = InfoUIView(title: "Money spent($)")
+        let view = InfoUIView(title: ViewStringConstants.moneySpent)
          view.translatesAutoresizingMaskIntoConstraints = false
          view.clipsToBounds = true
          view.layer.cornerRadius = ViewSizeConstants.defaultCornerRadius
@@ -62,7 +62,7 @@ class HomeVC: UIViewController {
     private let smokeButton: DefaultAppButton = {
        let view = DefaultAppButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Want to smoke")
+        view.setTitle(ViewStringConstants.wantSmoke)
         view.addTarget(self, action: #selector(openSmokeVC), for: .touchUpInside)
         return view
     }()
@@ -174,7 +174,10 @@ class HomeVC: UIViewController {
         
         static let visualize: String = "Visualize"
         static let health: String = "Health"
-        static let calendar: String = "Money spent"
+ 
+        static let moneySpent: String = "Money spent($)"
+        static let wantSmoke: String = "Want to smoke"
+        static let todayCigarettes: String = "Today cigarettes"
     }
     
 }
@@ -246,7 +249,7 @@ extension HomeVC {
             self.presenter.goToVisualizeVC()
         }
         
-        floatingActionButton.addItem(title: ViewStringConstants.calendar,
+        floatingActionButton.addItem(title: ViewStringConstants.moneySpent,
                                      image: .calendarImage) { _ in
             self.presenter.goToMoneyVC()
         }
