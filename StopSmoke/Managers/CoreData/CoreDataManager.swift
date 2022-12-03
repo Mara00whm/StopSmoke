@@ -16,7 +16,8 @@ protocol CoreDataManagerProtocol {
     func getInfoForAllTime() -> [Day]?
     func getInfoForToday() -> [DayInfo]
     func getNumberOfCigarettes() -> Int64?
-    
+    func createNewDay()
+    func setWellbeing(wellbeing: String)
     func addNewCigarettePack(price: Double)
     func getCigarettePacks() -> [CigarettePacks]
     func getSpentMoney() -> Double
@@ -75,7 +76,7 @@ class CoreDataManager: CoreDataManagerProtocol {
             let obj = try viewContext.fetch(fetchRequest)
             
             if let currentDay = obj.last?.day,
-            currentDay == convertDateToString(Date() ) {
+               currentDay == Date().convertDateToString() {
                 createNewSmokeSession()
             } else {
                 createNewDay()
@@ -87,7 +88,7 @@ class CoreDataManager: CoreDataManagerProtocol {
     }
     
     func countCigarettesBefore(started: Date, totalCigarettes: Int) {
-        let periodLabel = convertDateToString(started) + " - " + convertDateToString(Date())
+        let periodLabel = started.convertDateToString() + " - " + Date().convertDateToString()
         let period = Day(context: viewContext)
         period.day = periodLabel
         period.totalCigarettes = Int64(totalCigarettes)
@@ -110,7 +111,7 @@ class CoreDataManager: CoreDataManagerProtocol {
         let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
         do {
             let obj = try viewContext.fetch(fetchRequest)
-            return obj.last?.day == convertDateToString(Date()) ? obj.last?.totalCigarettes : 0
+            return obj.last?.day == Date().convertDateToString() ? obj.last?.totalCigarettes : 0
         } catch {
             return 0
         }
@@ -193,19 +194,44 @@ class CoreDataManager: CoreDataManagerProtocol {
             return 0
         }
     }
-    //MARK: - Private funcs
-    private func createNewDay() {
+    
+    // If user doesn't smoke today -> create new day with note else just rewrite last. User can add wellbeing only for today. Previous dates only read
+    func setWellbeing(wellbeing: String) {
+        let fetchRequest: NSFetchRequest<Day> = Day.fetchRequest()
+        
+        do {
+            let obj = try viewContext.fetch(fetchRequest)
+            
+            if obj.last?.day == Date().convertDateToString() {
+                obj.last?.wellbeing = wellbeing
+                saveContext()
+            } else {
+                createNewDayWithWellbeing(wellBeing: wellbeing)
+            }
+
+        } catch {
+            createNewDayWithWellbeing(wellBeing: wellbeing)
+        }
+    }
+
+     func createNewDay() {
         let day = Day(context: viewContext)
-        let currentDay = convertDateToString(Date() )
+        let currentDay = Date().convertDateToString()
         day.day = currentDay
         day.totalCigarettes = 0
+        day.wellbeing = ""
         saveContext()
     }
 
-    private func convertDateToString(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM d, YY"
-        return dateFormatter.string(from: date)
+    //MARK: - Private funcs
+
+    private func createNewDayWithWellbeing(wellBeing: String) {
+        let day = Day(context: viewContext)
+        let dayString = Date().convertDateToString()
+        day.day = dayString
+        day.wellbeing = wellBeing
+        day.totalCigarettes = 0
+        saveContext()
     }
     
 }

@@ -21,6 +21,7 @@ protocol HomeViewPresenterProtocol {
     func goToVisualizeVC()
     func goToHealthVC()
     func goToMoneyVC()
+    func goToCalendarVC()
     func loadData()
 }
 
@@ -91,6 +92,10 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     
     func goToMoneyVC() {
         router?.moneyVC()
+    }
+    
+    func goToCalendarVC() {
+        router?.calendarVC()
     }
 
 }

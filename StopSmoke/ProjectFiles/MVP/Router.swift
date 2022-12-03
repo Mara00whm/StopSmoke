@@ -19,6 +19,7 @@ protocol RouterProtocol: RouterMain {
     func visualizeVC()
     func healthVC()
     func moneyVC()
+    func calendarVC()
     func popToRoot()
 }
 
@@ -98,6 +99,13 @@ class Router: RouterProtocol {
         }
     }
     
+    func calendarVC() {
+        guard let calendarVC = assemblyBuilder?.createCalendarView(router: self) else { return }
+        calendarVC.modalPresentationStyle = .fullScreen
+        if let mainView = mainView {
+            mainView.present(calendarVC, animated: true)
+        }
+    }
     func popToRoot() {
         if let mainView = mainView {
             mainView.dismiss(animated: true)
