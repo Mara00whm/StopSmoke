@@ -1,6 +1,6 @@
 # StopSmoke
 Using the application, you can:    
--Add and see well-beings on calendar view
+-Add and see well-beings on calendar view     
 -Visualize the number of cigarettes smoked     
 -Track the body's recovery process     
 -Track time since last cigarette    
