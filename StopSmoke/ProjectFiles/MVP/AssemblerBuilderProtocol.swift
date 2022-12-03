@@ -14,6 +14,7 @@ protocol AssemblerBuilderProtocol {
     func createVisualizeView(router: RouterProtocol) -> UIViewController
     func createHealthView(router: RouterProtocol) -> UIViewController
     func createMoneyView(router: RouterProtocol) -> UIViewController
+    func createCalendarView(router: RouterProtocol) -> UIViewController
 }
 
 class ModuleBuilder: AssemblerBuilderProtocol {
@@ -71,6 +72,15 @@ class ModuleBuilder: AssemblerBuilderProtocol {
         let presenter = MoneyPresenter(view: view,
                                        coredataManager: coredataManager,
                                        router: router)
+        view.presenter = presenter
+        return view
+    }
+    
+    func createCalendarView(router: RouterProtocol) -> UIViewController {
+        let view = CalendarView()
+        let presenter = CalendarPresenter(view: view,
+                                          coredataManager: coredataManager,
+                                          router: router)
         view.presenter = presenter
         return view
     }

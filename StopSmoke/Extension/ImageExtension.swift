@@ -58,4 +58,8 @@ extension UIImage {
         UIImage(systemName: "heart")!
     }
     
+    static var moneyImage: UIImage {
+        UIImage(systemName: "bag")!
+    }
+    
 }

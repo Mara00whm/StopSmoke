@@ -13,6 +13,16 @@ extension Date {
         return lhs.timeIntervalSinceReferenceDate - rhs.timeIntervalSinceReferenceDate
     }
 
+    func convertDateToString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, YY"
+        return dateFormatter.string(from: self)
+    }
+    
+    func compareDate(_ date: Date) -> Bool {
+        return Calendar.current.isDate(self, equalTo: date, toGranularity: .day)
+    }
+    
 }
 
 extension TimeInterval {

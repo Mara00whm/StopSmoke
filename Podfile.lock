@@ -1,16 +1,20 @@
 PODS:
+  - FSCalendar (2.8.4)
   - JJFloatingActionButton (2.5.0)
 
 DEPENDENCIES:
+  - FSCalendar
   - JJFloatingActionButton
 
 SPEC REPOS:
   trunk:
+    - FSCalendar
     - JJFloatingActionButton
 
 SPEC CHECKSUMS:
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   JJFloatingActionButton: fdc3aefb0f28f04d0f988fa25d5fac97028a9ea7
 
-PODFILE CHECKSUM: f8799d341fd7965d019805fb13d7e55a48febbd1
+PODFILE CHECKSUM: 859c314178ac59b742c82eb815301ddcdfbaab72
 
 COCOAPODS: 1.11.3

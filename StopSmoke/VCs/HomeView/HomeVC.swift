@@ -250,10 +250,14 @@ extension HomeVC {
         }
         
         floatingActionButton.addItem(title: ViewStringConstants.moneySpent,
-                                     image: .calendarImage) { _ in
+                                     image: .moneyImage) { _ in
             self.presenter.goToMoneyVC()
         }
-        
+
+        floatingActionButton.addItem(title: "Wellbeing calendar", image: .calendarImage) { _ in
+            self.presenter.goToCalendarVC()
+        }
+
         floatingActionButton.addItem(title: ViewStringConstants.health,
                                      image: .heartImage) { _ in
             self.presenter.goToHealthVC()

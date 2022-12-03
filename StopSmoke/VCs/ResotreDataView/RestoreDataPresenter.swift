@@ -43,6 +43,7 @@ class RestoreDataPresenter: RestoreDataProtocol {
     
     func goToMainView() {
         userdefaultsManager.storeId(true)
+        coreDataManager.createNewDay()
         router?.mainVC()
     }
 }
