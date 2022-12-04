@@ -138,14 +138,14 @@ extension VisualizeVC: VisualizeViewProtocol {
 
 extension VisualizeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        VisualizeData.visualizeData.count
+        presenter.visualizeData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: ViewStringConstants.tableId,
                                                     for: indexPath) as? VisualizeTVC {
-            let data = VisualizeData.visualizeData[indexPath.row]
+            let data = presenter.visualizeData[indexPath.row]
             cell.setInfo(imageName: data.imageName,
                          desc: data.name,
                          value: data.metres,

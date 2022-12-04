@@ -19,6 +19,7 @@ protocol VisualizePresenterProtocol {
     func viewWillAppear()
     func dismissView()
     var metresOfCigarettes: Double {get}
+    var visualizeData: [VisualizeModel] {get}
 }
 
 class VisualizePresenter: VisualizePresenterProtocol {
@@ -32,7 +33,7 @@ class VisualizePresenter: VisualizePresenterProtocol {
             view?.reloadTable()
         }
     }
-    
+    var visualizeData: [VisualizeModel] = VisualizeData.visualizeData
     required init(view: VisualizeViewProtocol, coredataManager: CoreDataManagerProtocol, router: RouterProtocol) {
         self.view = view
         self.router = router

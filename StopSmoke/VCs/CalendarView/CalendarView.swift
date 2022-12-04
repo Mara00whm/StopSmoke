@@ -211,13 +211,16 @@ extension CalendarView: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDele
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillDefaultColorFor date: Date) -> UIColor? {
 
+        for object in presenter.days {
+            if object.day == date.convertDateToString() {
+                return .appBackgroundColor
+            }
+        }
         if date.compareDate(Date()) {
             return .systemBlue
-        } else if presenter.smokedDays.contains(date.convertDateToString()) {
-            return .appBackgroundColor
-        } else {
-            return .viewBackgroundColor
         }
+            return .viewBackgroundColor
+    
     }
     
 }

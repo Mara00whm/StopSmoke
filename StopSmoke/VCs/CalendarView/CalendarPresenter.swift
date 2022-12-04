@@ -17,7 +17,7 @@ protocol CalendarPresenterProtocol {
     func loadView()
     func saveWellbeing(_ wellbeing: String)
     func getWellbeingFor(_ day: Date)
-    var smokedDays: [String] {get}
+    var days: [Day] { get }
     func popToRoot()
 }
 
@@ -27,9 +27,7 @@ class CalendarPresenter: CalendarPresenterProtocol {
     weak var view: CalendarViewProtocol?
     let coredataManager: CoreDataManagerProtocol
     
-    private var days: [Day] = []
-    
-    var smokedDays: [String] = [] {
+    var days: [Day] = [] {
         didSet {
             view?.reloadData()
         }
@@ -47,7 +45,6 @@ class CalendarPresenter: CalendarPresenterProtocol {
     
     func loadView() {
         getDaysInfo()
-        getWellbeingsDays()
         getWellbeingFor(Date())
     }
     
@@ -71,16 +68,5 @@ class CalendarPresenter: CalendarPresenterProtocol {
             self.days = days
         }
     }
-
-    //Add days to another 
-    private func getWellbeingsDays() {
-        var temp: [String] = []
-        for day in days {
-            if let desc = day.day {
-                temp.append(desc)
-            }
-        }
-        smokedDays = temp
-   }
 
 }
