@@ -19,6 +19,7 @@ protocol HealthPresenterProtocol {
     func closeView()
     
     var timeFromLastCigarette: Double {get}
+    var healthData: [HealthModel] {get}
 }
 
 class HealthPresenter: HealthPresenterProtocol {
@@ -32,6 +33,8 @@ class HealthPresenter: HealthPresenterProtocol {
             view?.reloadTable()
         }
     }
+    
+    var healthData: [HealthModel] = HealthData.healthData
     
     required init(view: HealthViewProtocol,
                   coredataManager: CoreDataManagerProtocol,

@@ -123,13 +123,13 @@ class HealthView: UIViewController {
 extension HealthView: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        HealthData.healthData.count
+        presenter.healthData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: ViewStringConstants.tableID,
                                                     for: indexPath) as? HealthStatisticTVC {
-            let data = HealthData.healthData[indexPath.row]
+            let data = presenter.healthData[indexPath.row]
             cell.setInfo(image: data.image,
                          desctiprion: data.desciption,
                          timeNeed: data.hours,
