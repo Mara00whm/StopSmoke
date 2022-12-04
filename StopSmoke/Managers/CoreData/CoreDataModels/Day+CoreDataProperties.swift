@@ -2,7 +2,7 @@
 //  Day+CoreDataProperties.swift
 //  StopSmoke
 //
-//  Created by Marat on 02.12.2022.
+//  Created by Marat on 05.12.2022.
 //
 //
 
@@ -20,7 +20,6 @@ extension Day {
     @NSManaged public var totalCigarettes: Int64
     @NSManaged public var wellbeing: String?
     @NSManaged public var dayInfo: NSSet?
-
     
     var dayInfoUnwrappedArray: [DayInfo] {
         let dayInfoSet = dayInfo as? Set<DayInfo> ?? []
