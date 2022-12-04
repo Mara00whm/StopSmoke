@@ -52,7 +52,7 @@
 		8523FC00B865D639647215226F8F5C3E /* JJFloatingActionButton+Placement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "JJFloatingActionButton+Placement.swift"; path = "Sources/JJFloatingActionButton+Placement.swift"; sourceTree = "<group>"; };
 		865C1261F459AF6374F23059D454A517 /* JJFloatingActionButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JJFloatingActionButton.swift; path = Sources/JJFloatingActionButton.swift; sourceTree = "<group>"; };
 		988D713E97DB42EDBEC09DB10BA7DE3F /* JJFloatingActionButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JJFloatingActionButton-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F04E0963DF1C9EC9279319064948176 /* Styles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Styles.swift; path = Sources/Styles.swift; sourceTree = "<group>"; };
 		A46728B2F9BADF595A0D94AFAC8119F1 /* JJFloatingActionButtonDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JJFloatingActionButtonDelegate.swift; path = Sources/JJFloatingActionButtonDelegate.swift; sourceTree = "<group>"; };
 		A5C1B1DEBB741992ACFCA7B9654BDE71 /* Pods-StopSmoke-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StopSmoke-dummy.m"; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 		B1B8DD46AA1593B0BEEDFB289E52E385 /* JJFloatingActionButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JJFloatingActionButton-umbrella.h"; sourceTree = "<group>"; };
 		B29BFD00A5B89BBDDD22FE66E470E590 /* JJFloatingActionButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JJFloatingActionButton.release.xcconfig; sourceTree = "<group>"; };
 		B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JJFloatingActionButton; path = JJFloatingActionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C018C023280CA494F6178C919861124C /* Pods-StopSmoke */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-StopSmoke"; path = Pods_StopSmoke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C018C023280CA494F6178C919861124C /* Pods_StopSmoke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StopSmoke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDBC9DCECF9DBBA506D44C6F3314D624 /* Pods-StopSmoke-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StopSmoke-acknowledgements.plist"; sourceTree = "<group>"; };
 		D181EEA4BFCDE82794F4BB3626A0FF0C /* AnimationConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnimationConfiguration.swift; path = Sources/AnimationConfiguration.swift; sourceTree = "<group>"; };
 		D1C1BA3A983C99F09E19598341AEBAD7 /* JJActionItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JJActionItem.swift; path = Sources/JJActionItem.swift; sourceTree = "<group>"; };
@@ -115,7 +115,6 @@
 				6FA988A2103B944C0A073C37B9383FA0 /* UIView+JJFloatingActionButton.swift */,
 				28835180F5C5C2D9B879943089AB0A04 /* Support Files */,
 			);
-			name = JJFloatingActionButton;
 			path = JJFloatingActionButton;
 			sourceTree = "<group>";
 		};
@@ -131,7 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				B39ECB203814E0B477049873DBEA123C /* JJFloatingActionButton */,
-				C018C023280CA494F6178C919861124C /* Pods-StopSmoke */,
+				C018C023280CA494F6178C919861124C /* Pods_StopSmoke.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,7 +241,7 @@
 			);
 			name = "Pods-StopSmoke";
 			productName = Pods_StopSmoke;
-			productReference = C018C023280CA494F6178C919861124C /* Pods-StopSmoke */;
+			productReference = C018C023280CA494F6178C919861124C /* Pods_StopSmoke.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E109C6B6B466F202BA0B94E76B45D72B /* JJFloatingActionButton */ = {
