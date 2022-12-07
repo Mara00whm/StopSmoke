@@ -100,7 +100,13 @@ class CoreDataManager: CoreDataManagerProtocol {
 
         do {
             let obj = try viewContext.fetch(fetchRequest)
-            return obj.last?.dayInfoUnwrappedArray.last?.smokeDate
+            
+            for temp in obj.reversed() {
+                if temp.totalCigarettes != 0 {
+                    return temp.dayInfoUnwrappedArray.last?.smokeDate
+                }
+            }
+            return nil
         } catch {
             return nil
         }
