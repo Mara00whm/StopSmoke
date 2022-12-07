@@ -25,7 +25,7 @@ class HealthView: UIViewController {
     private var healthLabel: UILabel = {
        var view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.font = UIFont.boldSystemFont(ofSize: ViewSizeConstants.headerTextSize)
+        view.font = .headerFont
         view.text = ViewStringConstants.health
         view.textColor = .white
         return view

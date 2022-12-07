@@ -18,6 +18,16 @@ class VisualizeVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setImage(UIImage.closeViewImage, for: .normal)
         view.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        view.tintColor = .viewBackgroundColor
+        return view
+    }()
+    
+    private let headerTitle: UILabel = {
+       let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.font = .headerFont
+        view.text = ViewStringConstants.visualize
+        view.textColor = .viewBackgroundColor
         return view
     }()
     
@@ -59,11 +69,12 @@ class VisualizeVC: UIViewController {
     //MARK: - SETTING FUNCS
     
     private func settings() {
-        view?.backgroundColor = .appBackgroundColor
+        view.backgroundColor = .appBackgroundColor
 
         view.addSubview(totalCigarettesView)
         view.addSubview(closeButton)
         view.addSubview(visualizeTableView)
+        view.addSubview(headerTitle)
         
         visualizeTableView.dataSource = self
         visualizeTableView.delegate = self
@@ -72,12 +83,14 @@ class VisualizeVC: UIViewController {
     private func createAnchors(){
         let safeArea = view.safeAreaLayoutGuide
         
+        headerTitle.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: ViewSizeConstants.topPadding).isActive = true
+        headerTitle.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
         closeButton.leftAnchor.constraint(equalTo: view.leftAnchor,
                                           constant: ViewSizeConstants.leftPadding).isActive = true
-        closeButton.topAnchor.constraint(equalTo: safeArea.topAnchor,
-                                         constant: ViewSizeConstants.topPadding).isActive = true
+        closeButton.centerYAnchor.constraint(equalTo: headerTitle.centerYAnchor).isActive = true
     
-        totalCigarettesView.topAnchor.constraint(equalTo: closeButton.bottomAnchor,
+        totalCigarettesView.topAnchor.constraint(equalTo: headerTitle.bottomAnchor,
                                                  constant: ViewSizeConstants.topPadding).isActive = true
         totalCigarettesView.leftAnchor.constraint(equalTo: view.leftAnchor,
                                                   constant: ViewSizeConstants.leftPadding).isActive = true
@@ -112,6 +125,7 @@ class VisualizeVC: UIViewController {
         static let numOfCigarettes: String = "Number of cigarettes: "
         static let tableId: String = "metresOfCigarettesTable"
         static let errorString: String = "Something went wrong. Try to reload"
+        static let visualize: String = "Visualize"
     }
 }
 
