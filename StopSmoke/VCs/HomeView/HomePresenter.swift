@@ -9,13 +9,18 @@ import Foundation
 
 protocol HomeViewProtocol: AnyObject {
     func setTimeFromLastCigaret(time: TimeInterval)
-    func setTotalCigaretts(total: Int64)
+    func setTotalCigaretts(total: String)
     func setMoneySpent(_ money: Double)
     func reloadTable()
 }
 
 protocol HomeViewPresenterProtocol {
-    init(view: HomeViewProtocol, coredataManager: CoreDataManagerProtocol, router: RouterProtocol)
+    init(view: HomeViewProtocol,
+         coredataManager: CoreDataManagerProtocol,
+         router: RouterProtocol,
+         userdefaultsManager: UserDefaultsProtocol)
+
+    func saveToUserDefaults(_ value: String?)
     var allTimeTableInfo: [Day] {get}
     func goToSmokeVC()
     func goToVisualizeVC()
@@ -37,13 +42,16 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     var router: RouterProtocol?
     weak var view: HomeViewProtocol?
     let coredataManager: CoreDataManagerProtocol
-    
+    let userdefaultsManager: UserDefaultsProtocol
+
     required init(view: HomeViewProtocol,
                   coredataManager: CoreDataManagerProtocol,
-                  router: RouterProtocol) {
+                  router: RouterProtocol,
+                  userdefaultsManager: UserDefaultsProtocol) {
         self.view = view
         self.coredataManager = coredataManager
         self.router = router
+        self.userdefaultsManager = userdefaultsManager
 
         self.getTimeFromLastCigaret()
         self.getTotalTodayCigaretts()
@@ -65,7 +73,12 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     
     func getTotalTodayCigaretts() {
         let counter = coredataManager.getCountCigarettToday()
-        view?.setTotalCigaretts(total: counter ?? 0)
+        
+        if let limit = userdefaultsManager.readCigaretteLimit() {
+            view?.setTotalCigaretts(total: "\(counter ?? 0) / \(limit)")
+            return
+        }
+        view?.setTotalCigaretts(total: "\(counter ?? 0)")
     }
     
     func getInfoForAllTime() {
@@ -75,6 +88,13 @@ class HomeViewPresenter: HomeViewPresenterProtocol {
     func getSpentMoney() {
         let money = coredataManager.getSpentMoney()
         view?.setMoneySpent(money)
+    }
+    
+    func saveToUserDefaults(_ value: String?) {
+        if let intValue = Int(value ?? "") {
+            userdefaultsManager.storeCigaretteLimit(intValue)
+            getTotalTodayCigaretts()
+        }
     }
     
     // MARK: - Router funcs

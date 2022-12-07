@@ -29,28 +29,33 @@ class Router: RouterProtocol {
     
     var assemblyBuilder: AssemblerBuilderProtocol?
 
-    var userdefaultsManager: UserDefaultsProtocol
+    let userdefaultsManager: UserDefaultsProtocol
+    
+    let coredataManager: CoreDataManagerProtocol
     
     var mainView: UIViewController?
     
     init(navigationController: UINavigationController,
          assemblyBuilder: AssemblerBuilderProtocol,
-         userdefaultsManager: UserDefaultsProtocol) {
+         userdefaultsManager: UserDefaultsProtocol,
+         coredataManager: CoreDataManagerProtocol) {
         self.navigationController = navigationController
         self.assemblyBuilder = assemblyBuilder
         self.userdefaultsManager = userdefaultsManager
+        self.coredataManager = coredataManager
     }
     
     func restoreVC() {
         if let navigationController = navigationController {
             guard let restoreVC = assemblyBuilder?.createRestoreView(router: self,
-                                                                     userdefaultsProtocol: userdefaultsManager) else { return }
+                                                                     userdefaultsManager: userdefaultsManager,
+                                                                     coredataManager: coredataManager) else { return }
             navigationController.pushViewController(restoreVC, animated: true)
         }
     }
 
     func initialVC() {
-        if userdefaultsManager.readId() == false {
+        if userdefaultsManager.readFirstOpenning() == false {
             restoreVC()
         } else {
             mainVC()
@@ -59,7 +64,9 @@ class Router: RouterProtocol {
     
     func mainVC() {
         if let navigationController = navigationController {
-            guard let mainVC = assemblyBuilder?.createMainScreen(router: self) else { return }
+            guard let mainVC = assemblyBuilder?.createMainScreen(router: self,
+                                                                 userdefaultsManager: userdefaultsManager,
+                                                                 coredataManager: coredataManager) else { return }
             mainView = mainVC
             navigationController.viewControllers = [mainVC]
         }
@@ -67,13 +74,15 @@ class Router: RouterProtocol {
     
     func smokeVC() {
         if let navigationController = navigationController {
-            guard let smokeVC = assemblyBuilder?.createSmokeView(router: self) else { return }
+            guard let smokeVC = assemblyBuilder?.createSmokeView(router: self,
+                                                                 coredataManager: coredataManager) else { return }
             navigationController.pushViewController(smokeVC, animated: true)
         }
     }
     
     func visualizeVC() {
-        guard let visualizeVC = assemblyBuilder?.createVisualizeView(router: self) else { return }
+        guard let visualizeVC = assemblyBuilder?.createVisualizeView(router: self,
+                                                                     coredataManager: coredataManager) else { return }
         visualizeVC.modalPresentationStyle = .fullScreen
 
         if let mainView = mainView {
@@ -83,7 +92,8 @@ class Router: RouterProtocol {
     }
     
     func healthVC() {
-        guard let healthVC = assemblyBuilder?.createHealthView(router: self) else { return }
+        guard let healthVC = assemblyBuilder?.createHealthView(router: self,
+                                                               coredataManager: coredataManager) else { return }
         healthVC.modalPresentationStyle = .fullScreen
         
         if let mainView = mainView {
@@ -92,7 +102,8 @@ class Router: RouterProtocol {
     }
     
     func moneyVC() {
-        guard let moneyVC = assemblyBuilder?.createMoneyView(router: self) else { return }
+        guard let moneyVC = assemblyBuilder?.createMoneyView(router: self,
+                                                             coredataManager: coredataManager) else { return }
         moneyVC.modalPresentationStyle = .fullScreen
         if let mainView = mainView {
             mainView.present(moneyVC, animated: true)
@@ -100,7 +111,8 @@ class Router: RouterProtocol {
     }
     
     func calendarVC() {
-        guard let calendarVC = assemblyBuilder?.createCalendarView(router: self) else { return }
+        guard let calendarVC = assemblyBuilder?.createCalendarView(router: self,
+                                                                   coredataManager: coredataManager) else { return }
         calendarVC.modalPresentationStyle = .fullScreen
         if let mainView = mainView {
             mainView.present(calendarVC, animated: true)

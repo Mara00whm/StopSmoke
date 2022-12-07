@@ -22,7 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let assemblyBuilder = ModuleBuilder()
         let router = Router(navigationController: navigationController,
                             assemblyBuilder: assemblyBuilder,
-                            userdefaultsManager: UserDefaultsManager() )
+                            userdefaultsManager: UserDefaultsManager(),
+                            coredataManager: CoreDataManager() )
         router.initialVC()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

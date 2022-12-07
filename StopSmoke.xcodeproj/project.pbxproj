@@ -220,13 +220,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		79524DA92930227000C943CB /* MVP */ = {
+		79524DA92930227000C943CB /* BuilderMVP */ = {
 			isa = PBXGroup;
 			children = (
 				7976BE62291EB5B200F0EB20 /* AssemblerBuilderProtocol.swift */,
 				79524DAA2930228200C943CB /* Router.swift */,
 			);
-			path = MVP;
+			path = BuilderMVP;
 			sourceTree = "<group>";
 		};
 		79524DAC2930EABB00C943CB /* VCs */ = {
@@ -299,7 +299,7 @@
 		7976BE61291EB5A100F0EB20 /* ProjectFiles */ = {
 			isa = PBXGroup;
 			children = (
-				79524DA92930227000C943CB /* MVP */,
+				79524DA92930227000C943CB /* BuilderMVP */,
 				7976BE4D291EA40400F0EB20 /* AppDelegate.swift */,
 				7976BE4F291EA40400F0EB20 /* SceneDelegate.swift */,
 			);

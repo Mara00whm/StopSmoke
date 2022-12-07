@@ -186,10 +186,16 @@ class HomeVC: UIViewController {
         
         static let visualize: String = "Visualize"
         static let health: String = "Health"
- 
+        static let cigaretteLimit: String = "Cigarette limit"
+        static let wellbeingCalendar: String = "Well-being calendar"
         static let moneySpent: String = "Money spent($)"
         static let wantSmoke: String = "Want to smoke"
         static let todayCigarettes: String = "Today cigarettes"
+        
+        static let save: String = "Save"
+        static let cancel: String = "Cancel"
+        static let limitHeader: String = "Limit"
+        static let limitMessage: String = "Enter your cigarettes limit"
     }
     
 }
@@ -202,11 +208,15 @@ extension HomeVC: HomeViewProtocol {
     
     func setTimeFromLastCigaret(time: TimeInterval) {
         counter = time
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getTimeFromLastCigaret), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0,
+                                     target: self,
+                                     selector: #selector(getTimeFromLastCigaret),
+                                     userInfo: nil,
+                                     repeats: true)
     }
     
-    func setTotalCigaretts(total: Int64) {
-        todayCigarettesView.setValues("\(total)")
+    func setTotalCigaretts(total: String) {
+        todayCigarettesView.setValues(total)
     }
     
     func reloadTable() {
@@ -257,9 +267,27 @@ extension HomeVC {
         actionFloatingButton.buttonAnimationConfiguration = .transition(toImage: .buttonCloseImage)
         actionFloatingButton.itemAnimationConfiguration.itemLayout = .circular()
         
-        actionFloatingButton.addItem(title: "Settings",
+        actionFloatingButton.addItem(title: ViewStringConstants.cigaretteLimit,
                                      image: .settingsImage) { _ in
-            //Add later
+            let alertController: UIAlertController = UIAlertController(title: ViewStringConstants.limitHeader,
+                                                                       message: ViewStringConstants.limitMessage,
+                                                                       preferredStyle: .alert)
+            
+            //Save button
+            let saveAction: UIAlertAction = UIAlertAction(title: ViewStringConstants.save,
+                                                          style: .default) { action -> Void in
+                self.presenter.saveToUserDefaults(alertController.textFields?.first?.text)
+            }
+            
+            let cancelAction: UIAlertAction = UIAlertAction(title: ViewStringConstants.cancel, style: .destructive)
+            
+            alertController.addAction(cancelAction)
+            alertController.addAction(saveAction)
+            alertController.addTextField { tf in
+                tf.textAlignment = .center
+                tf.keyboardType = .numberPad
+            }
+            self.present(alertController, animated: true)
         }
 
         actionFloatingButton.addItem(title: ViewStringConstants.moneySpent,
@@ -267,7 +295,8 @@ extension HomeVC {
             self.presenter.goToMoneyVC()
         }
 
-        actionFloatingButton.addItem(title: "Wellbeing calendar", image: .calendarImage) { _ in
+        actionFloatingButton.addItem(title: ViewStringConstants.wellbeingCalendar,
+                                     image: .calendarImage) { _ in
             self.presenter.goToCalendarVC()
         }
         
