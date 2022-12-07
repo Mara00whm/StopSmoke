@@ -54,7 +54,7 @@ class CalendarView: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textColor = .viewBackgroundColor
         view.text = "Calendar"
-        view.font = UIFont.boldSystemFont(ofSize: ViewSizeConstants.headerSize)
+        view.font = .headerFont
         return view
     }()
     

@@ -62,4 +62,16 @@ extension UIImage {
         UIImage(systemName: "bag")!
     }
     
+    static var editImage: UIImage {
+        UIImage(systemName: "square.and.pencil")!
+    }
+    
+    static var visualizeImage: UIImage {
+        UIImage(systemName: "cylinder.split.1x2")!
+    }
+    
+    static var settingsImage: UIImage {
+        UIImage(systemName: "gear")!
+    }
+    
 }

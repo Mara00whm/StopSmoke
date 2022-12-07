@@ -17,7 +17,13 @@ class HomeVC: UIViewController {
     var timer: Timer?
 
     //MARK: - VIEWS
-    private let floatingActionButton: JJFloatingActionButton = {
+    private let actionFloatingButton: JJFloatingActionButton = {
+       let view = JJFloatingActionButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private let visualizeFloatingButton: JJFloatingActionButton = {
        let view = JJFloatingActionButton()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -94,7 +100,8 @@ class HomeVC: UIViewController {
         view.addSubview(averageCigarettesView)
         view.addSubview(allTimeInfoTable)
         view.addSubview(smokeButton)
-        view.addSubview(floatingActionButton)
+        view.addSubview(actionFloatingButton)
+        view.addSubview(visualizeFloatingButton)
     
         allTimeInfoTable.dataSource = self
         allTimeInfoTable.delegate = self
@@ -134,11 +141,16 @@ class HomeVC: UIViewController {
         allTimeInfoTable.rightAnchor.constraint(equalTo: timeFromLastCigaretteView.rightAnchor).isActive = true
         allTimeInfoTable.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        floatingActionButton.rightAnchor.constraint(equalTo: view.rightAnchor,
+        actionFloatingButton.rightAnchor.constraint(equalTo: view.rightAnchor,
                                                     constant: ViewSizeConstants.rightPadding).isActive = true
 
-        floatingActionButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
+        actionFloatingButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
                                                      constant: ViewSizeConstants.botPadding).isActive = true
+        
+        visualizeFloatingButton.leftAnchor.constraint(equalTo: view.leftAnchor,
+                                                      constant: ViewSizeConstants.leftPadding).isActive = true
+        visualizeFloatingButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
+                                                        constant: ViewSizeConstants.botPadding).isActive = true
     }
     //MARK: - objc funcs
     @objc private func getTimeFromLastCigaret() {
@@ -236,31 +248,49 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeVC {
     private func setUpFAB() {
-        floatingActionButton.handleSingleActionDirectly = false
-        floatingActionButton.buttonDiameter = ViewSizeConstants.itemHeight
-        floatingActionButton.buttonColor = .acceptButton
-        floatingActionButton.buttonImage = .buttonOpenImage
+        // Action button setup
+        actionFloatingButton.handleSingleActionDirectly = false
+        actionFloatingButton.buttonDiameter = ViewSizeConstants.itemHeight
+        actionFloatingButton.buttonColor = .acceptButton
+        actionFloatingButton.buttonImage = .editImage
     
-        floatingActionButton.buttonAnimationConfiguration = .transition(toImage: .buttonCloseImage)
-        floatingActionButton.itemAnimationConfiguration.itemLayout = .circular()
+        actionFloatingButton.buttonAnimationConfiguration = .transition(toImage: .buttonCloseImage)
+        actionFloatingButton.itemAnimationConfiguration.itemLayout = .circular()
         
-        floatingActionButton.addItem(title: ViewStringConstants.visualize,
-                                     image: .chartImage) { _ in
-            self.presenter.goToVisualizeVC()
+        actionFloatingButton.addItem(title: "Settings",
+                                     image: .settingsImage) { _ in
+            //Add later
         }
-        
-        floatingActionButton.addItem(title: ViewStringConstants.moneySpent,
+
+        actionFloatingButton.addItem(title: ViewStringConstants.moneySpent,
                                      image: .moneyImage) { _ in
             self.presenter.goToMoneyVC()
         }
 
-        floatingActionButton.addItem(title: "Wellbeing calendar", image: .calendarImage) { _ in
+        actionFloatingButton.addItem(title: "Wellbeing calendar", image: .calendarImage) { _ in
             self.presenter.goToCalendarVC()
         }
-
-        floatingActionButton.addItem(title: ViewStringConstants.health,
+        
+        //Visualize button setup
+        visualizeFloatingButton.handleSingleActionDirectly = false
+        visualizeFloatingButton.buttonDiameter = ViewSizeConstants.itemHeight
+        visualizeFloatingButton.buttonColor = .acceptButton
+        visualizeFloatingButton.buttonImage = .chartImage
+        visualizeFloatingButton.buttonAnimationConfiguration = .transition(toImage: .buttonCloseImage)
+        visualizeFloatingButton.itemAnimationConfiguration = .slideIn()
+        visualizeFloatingButton.configureDefaultItem { item in
+            item.titlePosition = .right
+        }
+        
+        visualizeFloatingButton.addItem(title: ViewStringConstants.visualize,
+                                     image: .visualizeImage) { _ in
+            self.presenter.goToVisualizeVC()
+        }
+        
+        visualizeFloatingButton.addItem(title: ViewStringConstants.health,
                                      image: .heartImage) { _ in
             self.presenter.goToHealthVC()
         }
+        
     }
 }

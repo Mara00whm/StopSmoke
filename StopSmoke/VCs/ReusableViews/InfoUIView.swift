@@ -22,6 +22,7 @@ class InfoUIView: UIView {
        let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.textColor = .appBackgroundColor
+        view.textAlignment = .center
         return view
     }()
     
@@ -66,7 +67,8 @@ class InfoUIView: UIView {
         contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         typeLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10).isActive = true
-        typeLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
+        typeLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor).isActive = true
+        typeLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor).isActive = true
         
         countLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         countLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true

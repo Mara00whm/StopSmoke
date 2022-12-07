@@ -59,6 +59,7 @@
 		799448882937B24300E85E7E /* CigarettePackTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799448872937B24300E85E7E /* CigarettePackTVC.swift */; };
 		7994488A2937C6A400E85E7E /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799448892937C6A400E85E7E /* DoubleExtension.swift */; };
 		7994488E293819CE00E85E7E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7994488D293819CE00E85E7E /* UserDefaultsManager.swift */; };
+		799F1CEC29412D48007F6D5A /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799F1CEB29412D48007F6D5A /* FontExtension.swift */; };
 		C09072B94644EA204A77429F /* Pods_StopSmoke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE16D59CCD2BC3F0FDEE01D /* Pods_StopSmoke.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +120,7 @@
 		799448872937B24300E85E7E /* CigarettePackTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CigarettePackTVC.swift; sourceTree = "<group>"; };
 		799448892937C6A400E85E7E /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		7994488D293819CE00E85E7E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		799F1CEB29412D48007F6D5A /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		B874196A24430E6E1099AF5A /* Pods-StopSmoke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopSmoke.release.xcconfig"; path = "Target Support Files/Pods-StopSmoke/Pods-StopSmoke.release.xcconfig"; sourceTree = "<group>"; };
 		CDE16D59CCD2BC3F0FDEE01D /* Pods_StopSmoke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StopSmoke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D12D4A2D65AC1FDFCE800D6A /* Pods-StopSmoke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StopSmoke.debug.xcconfig"; path = "Target Support Files/Pods-StopSmoke/Pods-StopSmoke.debug.xcconfig"; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				7935BDE32933FEE400B06292 /* ImageExtension.swift */,
 				799448892937C6A400E85E7E /* DoubleExtension.swift */,
 				792ECCD1293AB554009FD5FB /* StringExtension.swift */,
+				799F1CEB29412D48007F6D5A /* FontExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 				79524DAB2930228200C943CB /* Router.swift in Sources */,
 				79524D8B292C013000C943CB /* DefaultAppButton.swift in Sources */,
 				7935BDEE2935445B00B06292 /* NumberOfCigarettesView.swift in Sources */,
+				799F1CEC29412D48007F6D5A /* FontExtension.swift in Sources */,
 				7935BDE9293405ED00B06292 /* VisualizeVC.swift in Sources */,
 				7935BDE42933FEE500B06292 /* ImageExtension.swift in Sources */,
 				798993D4292AE4E4006EE79A /* CalendatExtension.swift in Sources */,

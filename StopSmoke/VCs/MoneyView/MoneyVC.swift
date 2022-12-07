@@ -26,7 +26,7 @@ class MoneyView: UIViewController {
        let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.tintColor = .white
-        view.font = UIFont.boldSystemFont(ofSize: ViewSizeConstants.headerLabel)
+        view.font = .headerFont
         view.text = ViewStringConstants.moneyHeaderLabel
         return view
     }()
